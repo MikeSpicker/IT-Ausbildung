@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-Ausbildung Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">IT-Ausbildung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pruefung">Prüfungsvorbereitung</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#themen">Themengebiete</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#praxis">Praxisprojekte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-text">
+                    <h1 class="display-4 fw-bold">Deine Zukunft als Fachinformatiker</h1>
+                    <p class="lead">Professionelle Lernressourcen und Community für angehende IT-Experten</p>
+                    <a href="#pruefung" class="btn btn-light btn-lg">Jetzt starten</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/mikespicker.jpg" alt="IT-Ausbildung" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Prüfungsvorbereitung Section -->
+        <section id="pruefung" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Prüfungsvorbereitung</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon mx-auto">
+                                    <i class="fas fa-tasks fa-2x"></i>
+                                </div>
+                                <h3 class="card-title h5">Übungsaufgaben</h3>
+                                <p class="card-text">Umfangreiche Sammlung von Übungsaufgaben mit detaillierten Lösungen.</p>
+                                <a href="quiz.html#formular" class="btn btn-outline-primary mt-3">Zu den Aufgaben</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon mx-auto">
+                                    <i class="fas fa-file-alt fa-2x"></i>
+                                </div>
+                                <h3 class="card-title h5">Altklausuren</h3>
+                                <p class="card-text">Zugriff auf vergangene Prüfungen mit Musterlösungen und Erklärungen.</p>
+                                <a href="wartung.html#formular" class="btn btn-outline-primary mt-3">Zu den Klausuren</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon mx-auto">
+                                    <i class="fas fa-video fa-2x"></i>
+                                </div>
+                                <h3 class="card-title h5">Lernmaterialien</h3>
+                                <p class="card-text">Videos, PDFs und interaktive Präsentationen zu allen Themen.</p>
+                                <a href="wartung.html#formular" class="btn btn-outline-primary mt-3">Zum Material</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Themengebiete Section -->
+        <section id="themen" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Themengebiete</h2>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title h5 mb-4">Grundlagen der IT</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Programmierung</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Netzwerke</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Hardware</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Betriebssysteme</li>
+                                </ul>
+                                <a href="grundlagen.html#formular" class="btn btn-outline-primary mt-3 w-100">Mehr erfahren</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title h5 mb-4">Anwendungsentwicklung</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Programmiersprachen</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Algorithmen</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Datenbanken</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Clean Code</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Versionskontrolle</li>
+                                </ul>
+                                <a href="anwendungsentwicklung.html" class="btn btn-outline-primary mt-3 w-100">Mehr erfahren</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title h5 mb-4">Systemintegration</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Server</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>IT-Sicherheit</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Netzwerktechnik</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Cloud Computing</li>
+                                </ul>
+                                <a href="systemintegration.html" class="btn btn-outline-primary mt-3 w-100">Mehr erfahren</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title h5 mb-4">Wirtschaft & Management</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Projektmanagement</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>BWL</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Datenschutz</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Qualitätssicherung</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i><a href="agile-entwicklung.html" class="text-dark">Agile Entwicklung</a></li>
+                                </ul>
+                                <a href="wirtschaft-management.html" class="btn btn-outline-primary mt-3 w-100">Mehr erfahren</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Praxis Section -->
+        <section id="praxis" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Praxisprojekte</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <img src="assets/praxis01.jpg" alt="Praxisprojekte" class="img-fluid rounded shadow">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="mb-4">Lerne durch echte Projekte</h3>
+                        <p class="lead mb-4">Unsere praxisorientierten Projekte helfen dir, deine theoretischen Kenntnisse in der realen Welt anzuwenden.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-project-diagram text-primary me-2"></i>Beispielprojekte für die Prüfung</li>
+                            <li class="mb-3"><i class="fas fa-code text-primary me-2"></i>GitHub-Repository mit Codebeispielen</li>
+                            <li class="mb-3"><i class="fas fa-users text-primary me-2"></i>Teambasierte Projekte</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Zu den Projekten</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Community</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-md-2">
+                        <img src="assets/Comminity.jpg" alt="Community" class="img-fluid rounded shadow">
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                        <h3 class="mb-4">Werde Teil unserer Community</h3>
+                        <p class="lead mb-4">Tausche dich mit anderen angehenden Fachinformatikern aus und lerne gemeinsam.</p>
+                        <div class="d-grid gap-3 d-md-block">
+                            <a href="#" class="btn btn-primary me-md-2 mb-2 mb-md-0">
+                                <i class="fab fa-discord me-2"></i>Discord beitreten
+                            </a>
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="fas fa-comments me-2"></i>Forum besuchen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Kontakt</h5>
+                    <p>Email: info@it-ausbildung.de<br>Tel: +49 123 456789</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Impressum</a></li>
+                        <li><a href="#" class="text-white">Datenschutz</a></li>
+                        <li><a href="#" class="text-white">AGB</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Social Media</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versionskontrolle in der IT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">IT-Lernplattform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Startseite</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-primary text-white py-5">
+            <div class="container">
+                <h1 class="display-4">Versionskontrolle in der IT</h1>
+                <p class="lead">Lernen Sie die Grundlagen und Best Practices der Versionskontrolle mit Git</p>
+            </div>
+        </section>
+
+        <!-- Grundlagen Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Grundlagen der Versionskontrolle</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Was ist Versionskontrolle?</h3>
+                                <p>Versionskontrolle ist ein System, das Änderungen an Dateien über die Zeit verfolgt. Es ermöglicht:</p>
+                                <ul>
+                                    <li>Nachverfolgung von Änderungen</li>
+                                    <li>Wiederherstellung älterer Versionen</li>
+                                    <li>Parallele Entwicklung durch mehrere Personen</li>
+                                    <li>Dokumentation von Entscheidungen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Warum Git?</h3>
+                                <p>Git ist das meistgenutzte Versionskontrollsystem und bietet:</p>
+                                <ul>
+                                    <li>Dezentrale Struktur</li>
+                                    <li>Schnelle Performance</li>
+                                    <li>Branching und Merging</li>
+                                    <li>Große Community</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Git Befehle Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Wichtige Git-Befehle</h2>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Grundlegende Befehle</h3>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <code>git init</code>
+                                        <p>Initialisiert ein neues Git-Repository</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>git clone</code>
+                                        <p>Klont ein bestehendes Repository</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>git add</code>
+                                        <p>Fügt Änderungen zur Staging-Area hinzu</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>git commit</code>
+                                        <p>Speichert Änderungen im Repository</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Branch-Befehle</h3>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <code>git branch</code>
+                                        <p>Zeigt und erstellt Branches</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>git checkout</code>
+                                        <p>Wechselt zwischen Branches</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>git merge</code>
+                                        <p>Führt Branches zusammen</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>git rebase</code>
+                                        <p>Basis eines Branches ändern</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Remote-Befehle</h3>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <code>git remote</code>
+                                        <p>Verwaltet Remote-Repositories</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>git fetch</code>
+                                        <p>Lädt Remote-Änderungen herunter</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>git pull</code>
+                                        <p>Lädt und merged Remote-Änderungen</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>git push</code>
+                                        <p>Lädt lokale Änderungen hoch</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interaktive Übungen -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Interaktive Übungen</h2>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Git-Flow Simulation</h3>
+                                <div class="git-simulation">
+                                    <div class="simulation-workspace">
+                                        <div class="workspace-files mb-3">
+                                            <h6>Arbeitsverzeichnis:</h6>
+                                            <ul class="list-unstyled" id="workspaceFiles">
+                                                <li><i class="fas fa-file-code"></i> index.html</li>
+                                                <li><i class="fas fa-file-code"></i> style.css</li>
+                                            </ul>
+                                        </div>
+                                        <div class="git-commands mb-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text">$</span>
+                                                <input type="text" class="form-control" id="gitCommand" placeholder="Git-Befehl eingeben...">
+                                                <button class="btn btn-primary" id="runCommand">Ausführen</button>
+                                            </div>
+                                        </div>
+                                        <div class="command-output bg-dark text-light p-3 rounded">
+                                            <pre id="commandOutput">Bereit für Git-Befehle...</pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Branch-Management Übung</h3>
+                                <div class="branch-exercise">
+                                    <div class="branch-visualization mb-3" id="branchVisualization">
+                                        <!-- Branch-Visualisierung wird hier durch JS gerendert -->
+                                    </div>
+                                    <div class="exercise-controls">
+                                        <div class="btn-group mb-3">
+                                            <button class="btn btn-outline-primary" id="createBranch">Branch erstellen</button>
+                                            <button class="btn btn-outline-primary" id="mergeBranch">Branch mergen</button>
+                                            <button class="btn btn-outline-primary" id="deleteBranch">Branch löschen</button>
+                                        </div>
+                                        <div class="exercise-feedback mt-3">
+                                            <div class="alert alert-info" id="exerciseFeedback">
+                                                Erstellen Sie einen Feature-Branch und mergen Sie ihn zurück in den main-Branch.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Best Practices</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Commit-Messages</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✅ Prägnant und beschreibend</li>
+                                    <li class="mb-2">✅ Im Imperativ schreiben</li>
+                                    <li class="mb-2">✅ Änderungen klar beschreiben</li>
+                                    <li class="mb-2">❌ Vage Beschreibungen vermeiden</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Branching-Strategie</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✅ Feature Branches nutzen</li>
+                                    <li class="mb-2">✅ Regelmäßig mergen</li>
+                                    <li class="mb-2">✅ Konflikte zeitnah lösen</li>
+                                    <li class="mb-2">❌ Direkt in main committen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Workflow</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✅ Regelmäßige kleine Commits</li>
+                                    <li class="mb-2">✅ Pull vor Push</li>
+                                    <li class="mb-2">✅ Code Review durchführen</li>
+                                    <li class="mb-2">❌ Große, unübersichtliche Commits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Weitere Ressourcen</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://git-scm.com/doc" class="text-white" target="_blank">Git Dokumentation</a></li>
+                        <li><a href="https://learngitbranching.js.org/" class="text-white" target="_blank">Git Branching Lernen</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2025 IT-Lernplattform</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="js/versionskontrolle.js"></script>
+</body>
+</html>

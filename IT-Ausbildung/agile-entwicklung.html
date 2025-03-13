@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Entwicklung - Lernplattform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">IT-Ausbildung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Zurück zur Startseite</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Header -->
+        <header class="bg-light py-5">
+            <div class="container">
+                <h1 class="text-center mb-4">Agile Entwicklung</h1>
+                <p class="lead text-center">Verstehe die Grundlagen und Praktiken der agilen Softwareentwicklung</p>
+            </div>
+        </header>
+
+        <!-- Einführung Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-6">
+                        <h2 class="mb-4">Was ist Agile Entwicklung?</h2>
+                        <p class="lead">Agile Entwicklung ist ein iterativer Ansatz zur Softwareentwicklung, der sich auf Flexibilität, Zusammenarbeit und Kundenzufriedenheit konzentriert.</p>
+                        <div class="card bg-light border-0 p-4 mt-4">
+                            <h5 class="mb-3">Kernwerte des Agilen Manifests:</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Individuen und Interaktionen über Prozesse und Werkzeuge</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Funktionierende Software über umfassende Dokumentation</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Zusammenarbeit mit dem Kunden über Vertragsverhandlungen</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Reagieren auf Veränderung über das Befolgen eines Plans</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://via.placeholder.com/600x400" alt="Agile Entwicklung" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methoden Section -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Agile Methoden</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="fas fa-sync-alt fa-3x text-primary"></i>
+                                </div>
+                                <h3 class="card-title h5 text-center mb-3">Scrum</h3>
+                                <p class="card-text">Framework für komplexe Produktentwicklung mit Sprints, Daily Standups und regelmäßigen Reviews.</p>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3">Mehr zu Scrum</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="fas fa-tasks fa-3x text-primary"></i>
+                                </div>
+                                <h3 class="card-title h5 text-center mb-3">Kanban</h3>
+                                <p class="card-text">Visualisierung des Arbeitsflusses mit Fokus auf kontinuierliche Lieferung und Vermeidung von Überlastung.</p>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3">Mehr zu Kanban</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="fas fa-code fa-3x text-primary"></i>
+                                </div>
+                                <h3 class="card-title h5 text-center mb-3">XP</h3>
+                                <p class="card-text">Extreme Programming mit Fokus auf technische Exzellenz und Programmierungspraktiken.</p>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3">Mehr zu XP</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="fas fa-users fa-3x text-primary"></i>
+                                </div>
+                                <h3 class="card-title h5 text-center mb-3">Crystal</h3>
+                                <p class="card-text">Familie von Methoden, die sich an Teamgröße und Projektkritikalität anpassen.</p>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3">Mehr zu Crystal</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Praktiken Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Agile Praktiken</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title h5 mb-4">Planung & Organisation</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3"><i class="fas fa-clipboard-list text-primary me-2"></i>User Stories</li>
+                                    <li class="mb-3"><i class="fas fa-calendar-alt text-primary me-2"></i>Sprint Planning</li>
+                                    <li class="mb-3"><i class="fas fa-chart-line text-primary me-2"></i>Burndown Charts</li>
+                                    <li class="mb-3"><i class="fas fa-comments text-primary me-2"></i>Daily Stand-ups</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title h5 mb-4">Entwicklung</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3"><i class="fas fa-code-branch text-primary me-2"></i>Pair Programming</li>
+                                    <li class="mb-3"><i class="fas fa-vial text-primary me-2"></i>Test-Driven Development</li>
+                                    <li class="mb-3"><i class="fas fa-code text-primary me-2"></i>Continuous Integration</li>
+                                    <li class="mb-3"><i class="fas fa-redo text-primary me-2"></i>Refactoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title h5 mb-4">Review & Verbesserung</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3"><i class="fas fa-search text-primary me-2"></i>Sprint Review</li>
+                                    <li class="mb-3"><i class="fas fa-sync text-primary me-2"></i>Retrospektiven</li>
+                                    <li class="mb-3"><i class="fas fa-chart-bar text-primary me-2"></i>Velocity Tracking</li>
+                                    <li class="mb-3"><i class="fas fa-thumbs-up text-primary me-2"></i>Feedback Loops</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vorteile Section -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Vorteile der Agilen Entwicklung</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Für das Team</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        <strong>Bessere Zusammenarbeit:</strong> Regelmäßige Meetings und offene Kommunikation
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        <strong>Höhere Motivation:</strong> Selbstorganisation und klare Ziele
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        <strong>Kontinuierliches Lernen:</strong> Regelmäßige Retrospektiven
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Für das Produkt</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        <strong>Höhere Qualität:</strong> Kontinuierliches Feedback und Tests
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        <strong>Schnellere Time-to-Market:</strong> Iterative Entwicklung
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        <strong>Bessere Anpassungsfähigkeit:</strong> Flexibilität bei Änderungen
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Praktische Übungen Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Praktische Übungen</h2>
+                <div class="row g-4">
+                    <!-- Scrum Simulation -->
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Scrum Simulation</h3>
+                                <p>Ein fiktives Projekt zur Entwicklung einer mobilen App:</p>
+                                <div class="scenario-box bg-light p-3 rounded mb-4">
+                                    <h4 class="h6">Szenario:</h4>
+                                    <p class="mb-3">Ein Startup möchte eine Fitness-App entwickeln. Du bist Teil des Scrum-Teams.</p>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-users text-primary me-2"></i>Team: 5 Entwickler</li>
+                                        <li class="mb-2"><i class="fas fa-calendar-alt text-primary me-2"></i>Sprint-Länge: 2 Wochen</li>
+                                        <li class="mb-2"><i class="fas fa-list text-primary me-2"></i>Product Backlog: 20 User Stories</li>
+                                    </ul>
+                                </div>
+                                <div class="exercise mb-4">
+                                    <h4 class="h6">Übungsaufgaben:</h4>
+                                    <ol class="ps-3">
+                                        <li>Plane den ersten Sprint</li>
+                                        <li>Erstelle ein Sprint Backlog</li>
+                                        <li>Organisiere ein Daily Scrum</li>
+                                    </ol>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#scrumModal">Zur Übung</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Kanban Übung -->
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Kanban Board Übung</h3>
+                                <p>Optimiere den Workflow eines Entwicklungsteams:</p>
+                                <div class="scenario-box bg-light p-3 rounded mb-4">
+                                    <h4 class="h6">Szenario:</h4>
+                                    <p class="mb-3">Ein bestehendes Projekt hat Probleme mit Engpässen in der Entwicklung.</p>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-clock text-primary me-2"></i>Lange Wartezeiten</li>
+                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-primary me-2"></i>Überlastete Tester</li>
+                                        <li class="mb-2"><i class="fas fa-random text-primary me-2"></i>Unklare Prozesse</li>
+                                    </ul>
+                                </div>
+                                <div class="exercise mb-4">
+                                    <h4 class="h6">Übungsaufgaben:</h4>
+                                    <ol class="ps-3">
+                                        <li>Erstelle ein Kanban Board</li>
+                                        <li>Definiere WIP-Limits</li>
+                                        <li>Identifiziere Bottlenecks</li>
+                                    </ol>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#kanbanModal">Zur Übung</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ressourcen Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Weiterführende Ressourcen</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                                <h3 class="card-title h5">Literaturempfehlungen</h3>
+                                <p class="card-text">Bücher und Artikel zum Vertiefen der agilen Prinzipien und Praktiken.</p>
+                                <a href="#" class="btn btn-outline-primary mt-3">Zur Literaturliste</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-laptop-code fa-3x text-primary mb-3"></i>
+                                <h3 class="card-title h5">Online-Kurse</h3>
+                                <p class="card-text">Interaktive Tutorials und Video-Kurse für praktisches Lernen.</p>
+                                <a href="#" class="btn btn-outline-primary mt-3">Zu den Kursen</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                                <h3 class="card-title h5">Community</h3>
+                                <p class="card-text">Austausch mit anderen Entwicklern und Agile Practitioners.</p>
+                                <a href="#" class="btn btn-outline-primary mt-3">Zur Community</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Teste dein Wissen</h2>
+                <div class="quiz-container">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div id="quiz">
+                                <div class="progress mb-4">
+                                    <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                <div id="question-container" class="mb-4">
+                                    <h3 class="h5 mb-4">Frage <span id="question-number">1</span>/5</h3>
+                                    <p id="question-text" class="lead"></p>
+                                </div>
+                                <div id="answers-container" class="d-grid gap-2"></div>
+                                <div class="mt-4 text-center">
+                                    <button id="next-btn" class="btn btn-primary" style="display: none;">Nächste Frage</button>
+                                    <button id="restart-btn" class="btn btn-outline-primary" style="display: none;">Quiz neu starten</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrum Modal -->
+        <div class="modal fade" id="scrumModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Scrum Simulation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="sprint-planning mb-4">
+                            <h4 class="h5 mb-3">Sprint Planning</h4>
+                            <div class="user-stories">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6>User Story 1</h6>
+                                        <p class="mb-2">Als Benutzer möchte ich mich registrieren können.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="badge bg-info">5 Story Points</span>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="story1">
+                                                <label class="form-check-label" for="story1">Zum Sprint hinzufügen</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h6>User Story 2</h6>
+                                        <p class="mb-2">Als Benutzer möchte ich Workouts erstellen können.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="badge bg-info">8 Story Points</span>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="story2">
+                                                <label class="form-check-label" for="story2">Zum Sprint hinzufügen</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="daily-scrum mb-4">
+                            <h4 class="h5 mb-3">Daily Scrum Simulation</h4>
+                            <div class="form-group mb-3">
+                                <label class="form-label">Was hast du gestern gemacht?</label>
+                                <textarea class="form-control" rows="2"></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="form-label">Was wirst du heute machen?</label>
+                                <textarea class="form-control" rows="2"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Gibt es Hindernisse?</label>
+                                <textarea class="form-control" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                        <button type="button" class="btn btn-primary">Speichern</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kanban Modal -->
+        <div class="modal fade" id="kanbanModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Kanban Board Übung</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="kanban-board">
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-header bg-light">
+                                            To Do
+                                            <span class="badge bg-secondary ms-2">WIP: 4</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="task-card p-2 mb-2 bg-light rounded">
+                                                <small class="d-block text-muted">Task #1</small>
+                                                Feature A entwickeln
+                                            </div>
+                                            <div class="task-card p-2 mb-2 bg-light rounded">
+                                                <small class="d-block text-muted">Task #2</small>
+                                                Bug fixing
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-header bg-light">
+                                            In Progress
+                                            <span class="badge bg-warning ms-2">WIP: 3</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="task-card p-2 mb-2 bg-light rounded">
+                                                <small class="d-block text-muted">Task #3</small>
+                                                Code Review
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-header bg-light">
+                                            Testing
+                                            <span class="badge bg-danger ms-2">WIP: 5</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="task-card p-2 mb-2 bg-light rounded">
+                                                <small class="d-block text-muted">Task #4</small>
+                                                Unit Tests
+                                            </div>
+                                            <div class="task-card p-2 mb-2 bg-light rounded">
+                                                <small class="d-block text-muted">Task #5</small>
+                                                Integration Tests
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-header bg-light">
+                                            Done
+                                            <span class="badge bg-success ms-2">3</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="task-card p-2 mb-2 bg-light rounded">
+                                                <small class="d-block text-muted">Task #6</small>
+                                                Setup completed
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="analysis-section mt-4">
+                            <h4 class="h5 mb-3">Analyse</h4>
+                            <div class="form-group mb-3">
+                                <label class="form-label">Identifizierte Bottlenecks:</label>
+                                <textarea class="form-control" rows="2" placeholder="Beschreibe die gefundenen Engpässe..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Verbesserungsvorschläge:</label>
+                                <textarea class="form-control" rows="2" placeholder="Wie können die Prozesse optimiert werden?"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                        <button type="button" class="btn btn-primary">Analyse speichern</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Über diese Lernplattform</h5>
+                    <p>Diese Seite bietet einen umfassenden Überblick über agile Entwicklungsmethoden und -praktiken für Fachinformatiker in der Ausbildung.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Kontakt & Support</h5>
+                    <p>Bei Fragen oder Anregungen kontaktieren Sie uns unter:</p>
+                    <p><i class="fas fa-envelope me-2"></i>support@it-ausbildung.de</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const questions = [
+            {
+                question: "Was ist ein Kernwert des Agilen Manifests?",
+                answers: [
+                    "Dokumentation über funktionierende Software",
+                    "Individuen und Interaktionen über Prozesse und Werkzeuge",
+                    "Vertragsverhandlungen über Zusammenarbeit",
+                    "Plan befolgen über Veränderung"
+                ],
+                correct: 1
+            },
+            {
+                question: "Welches ist KEIN Bestandteil von Scrum?",
+                answers: [
+                    "Daily Standup",
+                    "Sprint Planning",
+                    "Wasserfall-Modell",
+                    "Sprint Review"
+                ],
+                correct: 2
+            },
+            {
+                question: "Was ist ein wichtiges Prinzip von Kanban?",
+                answers: [
+                    "Visualisierung des Arbeitsflusses",
+                    "Feste Sprintlängen",
+                    "Hierarchische Teamstruktur",
+                    "Lange Planungsphasen"
+                ],
+                correct: 0
+            },
+            {
+                question: "Was ist eine Praktik aus Extreme Programming (XP)?",
+                answers: [
+                    "Einzelarbeit",
+                    "Dokumentation zuerst",
+                    "Pair Programming",
+                    "Jährliche Releases"
+                ],
+                correct: 2
+            },
+            {
+                question: "Was ist der Zweck einer Sprint Retrospektive?",
+                answers: [
+                    "Neue Features planen",
+                    "Prozessverbesserung diskutieren",
+                    "Code Review durchführen",
+                    "Kunden präsentieren"
+                ],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function initQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            showQuestion();
+            document.getElementById('restart-btn').style.display = 'none';
+        }
+
+        function showQuestion() {
+            const question = questions[currentQuestion];
+            document.getElementById('question-text').textContent = question.question;
+            document.getElementById('question-number').textContent = currentQuestion + 1;
+            
+            const answersContainer = document.getElementById('answers-container');
+            answersContainer.innerHTML = '';
+            
+            question.answers.forEach((answer, index) => {
+                const button = document.createElement('button');
+                button.className = 'btn btn-outline-primary answer-btn';
+                button.textContent = answer;
+                button.onclick = () => selectAnswer(index);
+                answersContainer.appendChild(button);
+            });
+
+            document.getElementById('next-btn').style.display = 'none';
+            updateProgress();
+        }
+
+        function selectAnswer(answerIndex) {
+            const question = questions[currentQuestion];
+            const buttons = document.querySelectorAll('.answer-btn');
+            
+            buttons.forEach(button => {
+                button.disabled = true;
+            });
+
+            if (answerIndex === question.correct) {
+                buttons[answerIndex].classList.add('correct');
+                score++;
+            } else {
+                buttons[answerIndex].classList.add('incorrect');
+                buttons[question.correct].classList.add('correct');
+            }
+
+            if (currentQuestion < questions.length - 1) {
+                document.getElementById('next-btn').style.display = 'inline-block';
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const quizContainer = document.getElementById('quiz');
+            const percentage = (score / questions.length) * 100;
+            
+            quizContainer.innerHTML = `
+                <h3 class="mb-4">Quiz abgeschlossen!</h3>
+                <p class="lead">Du hast ${score} von ${questions.length} Fragen richtig beantwortet (${percentage}%)</p>
+                <button onclick="initQuiz()" class="btn btn-primary">Quiz neu starten</button>
+            `;
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.querySelector('.progress-bar').style.width = `${progress}%`;
+        }
+
+        document.getElementById('next-btn').onclick = () => {
+            currentQuestion++;
+            showQuestion();
+        };
+
+        // Initialize the quiz when the page loads
+        initQuiz();
+    </script>
+</body>
+</html>

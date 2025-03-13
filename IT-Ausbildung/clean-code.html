@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Code - Lernplattform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">IT-Ausbildung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Zurück zur Startseite</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Header -->
+        <header class="bg-light py-5">
+            <div class="container">
+                <h1 class="text-center mb-4">Clean Code</h1>
+                <p class="lead text-center">Lerne die Kunst, sauberen und wartbaren Code zu schreiben</p>
+            </div>
+        </header>
+
+        <!-- Grundprinzipien Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Grundprinzipien</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-book fa-2x"></i>
+                                </div>
+                                <h3 class="card-title h5">Lesbarkeit</h3>
+                                <p class="card-text">Code sollte wie ein gut geschriebenes Buch sein - klar, verständlich und selbsterklärend.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-tools fa-2x"></i>
+                                </div>
+                                <h3 class="card-title h5">Wartbarkeit</h3>
+                                <p class="card-text">Code sollte einfach zu warten, zu erweitern und zu modifizieren sein.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="feature-icon">
+                                    <i class="fas fa-recycle fa-2x"></i>
+                                </div>
+                                <h3 class="card-title h5">Wiederverwendbarkeit</h3>
+                                <p class="card-text">Code sollte modular und wiederverwendbar sein, um Redundanz zu vermeiden.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices Section -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Best Practices</h2>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Aussagekräftige Namen</h3>
+                                <div class="code-example p-3 bg-dark text-light rounded">
+                                    <pre><code class="language-javascript">// Schlecht
+const d = new Date();
+const n = ['Max', 'Tom', 'Anna'];
+function calc(a, b) { return a + b; }
+
+// Gut
+const currentDate = new Date();
+const userNames = ['Max', 'Tom', 'Anna'];
+function calculateSum(firstNumber, secondNumber) {
+    return firstNumber + secondNumber;
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Funktionen</h3>
+                                <div class="code-example p-3 bg-dark text-light rounded">
+                                    <pre><code class="language-javascript">// Schlecht
+function handleUserData(user) {
+    validateUser(user);
+    updateDatabase(user);
+    sendEmail(user);
+    updateUI(user);
+}
+
+// Gut
+function handleUserData(user) {
+    if (!isValidUser(user)) {
+        throw new Error('Ungültige Benutzerdaten');
+    }
+    
+    saveUserToDatabase(user);
+    notifyUserViaEmail(user);
+    refreshUserInterface(user);
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLID Principles Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">SOLID Prinzipien</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Single Responsibility</h3>
+                                <p>Eine Klasse sollte nur einen Grund haben, sich zu ändern.</p>
+                                <div class="example-box bg-light p-3 rounded mt-3">
+                                    <h6>Beispiel:</h6>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-check text-success me-2"></i>UserRepository für Datenbankzugriff</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>UserValidator für Validierung</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>UserNotifier für Benachrichtigungen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Open/Closed</h3>
+                                <p>Klassen sollten offen für Erweiterungen, aber geschlossen für Modifikationen sein.</p>
+                                <div class="example-box bg-light p-3 rounded mt-3">
+                                    <h6>Beispiel:</h6>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-check text-success me-2"></i>Plugins statt Codeänderungen</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Strategie-Pattern</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Vererbung statt Modifikation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Liskov Substitution</h3>
+                                <p>Objekte einer Basisklasse sollten durch Objekte ihrer abgeleiteten Klassen ersetzt werden können.</p>
+                                <div class="example-box bg-light p-3 rounded mt-3">
+                                    <h6>Beispiel:</h6>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-check text-success me-2"></i>Vererbungshierarchien</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Polymorphismus</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Interfaces</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Smells Section -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Code Smells erkennen</h2>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Duplicated Code</h3>
+                                <p>Wiederholter Code ist ein Zeichen für mangelnde Abstraktion.</p>
+                                <div class="code-smell-example bg-danger text-white p-3 rounded">
+                                    <pre class="mb-0"><code>function validateUser() {
+    // Validierungslogik
+}
+
+function validateProduct() {
+    // Gleiche Validierungslogik
+}</code></pre>
+                                </div>
+                                <div class="solution bg-success text-white p-3 rounded mt-3">
+                                    <pre class="mb-0"><code>function validate(entity) {
+    // Gemeinsame Validierungslogik
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Lange Methoden</h3>
+                                <p>Methoden sollten kurz und fokussiert sein.</p>
+                                <div class="code-smell-example bg-danger text-white p-3 rounded">
+                                    <pre class="mb-0"><code>function processOrder() {
+    // 100+ Zeilen Code
+    // Validierung
+    // Berechnung
+    // Datenbankzugriff
+    // E-Mail-Versand
+}</code></pre>
+                                </div>
+                                <div class="solution bg-success text-white p-3 rounded mt-3">
+                                    <pre class="mb-0"><code>function processOrder() {
+    validateOrder();
+    calculateTotal();
+    saveToDatabase();
+    sendConfirmation();
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Kommentare als Krücke</h3>
+                                <p>Code sollte selbsterklärend sein.</p>
+                                <div class="code-smell-example bg-danger text-white p-3 rounded">
+                                    <pre class="mb-0"><code>// Berechnet das Alter
+function calc(d) {
+    return (
+        new Date().getFullYear() - 
+        d.getFullYear()
+    );
+}</code></pre>
+                                </div>
+                                <div class="solution bg-success text-white p-3 rounded mt-3">
+                                    <pre class="mb-0"><code>function calculateAge(birthDate) {
+    return (
+        new Date().getFullYear() - 
+        birthDate.getFullYear()
+    );
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Praktische Übungen -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Praktische Übungen</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Code Review Übung</h3>
+                                <p>Analysiere den folgenden Code und identifiziere Verbesserungsmöglichkeiten:</p>
+                                <div class="code-example p-3 bg-dark text-light rounded mb-3">
+                                    <pre><code class="language-javascript">function p(u, o) {
+    var t = 0;
+    for(var i = 0; i < o.length; i++) {
+        if(o[i].t === "food") {
+            t += o[i].p;
+        }
+    }
+    if(u.m === "premium") {
+        return t * 0.9;
+    } else {
+        return t;
+    }
+}</code></pre>
+                                </div>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                                    Code analysieren
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Refactoring Challenge</h3>
+                                <p>Verbessere den Code nach Clean Code Prinzipien:</p>
+                                <div id="refactoring-exercise">
+                                    <div class="code-example p-3 bg-dark text-light rounded mb-3">
+                                        <pre><code class="language-javascript">class DB {
+    d;
+    constructor() {
+        this.d = [];
+    }
+    a(i) {
+        this.d.push(i);
+    }
+    f(id) {
+        return this.d.find(x => x.id === id);
+    }
+    u(id, n) {
+        let i = this.d.findIndex(x => x.id === id);
+        if(i >= 0) {
+            this.d[i] = {...this.d[i], ...n};
+        }
+    }
+}</code></pre>
+                                    </div>
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#refactoringModal">
+                                        Code verbessern
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Examples Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Interaktive Beispiele</h2>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Funktionen verbessern</h3>
+                                <div class="code-playground">
+                                    <div class="code-editor-container mb-3">
+                                        <label class="form-label">Original Code:</label>
+                                        <pre class="code-example bg-dark text-light p-3 rounded"><code class="language-javascript">function x(a, b) {
+    var r = 0;
+    for(var i = 0; i < a.length; i++) {
+        if(b === "sum") {
+            r += a[i];
+        } else if(b === "mul") {
+            if(i === 0) r = 1;
+            r *= a[i];
+        }
+    }
+    return r;
+}</code></pre>
+                                        <label class="form-label mt-3">Dein verbesserter Code:</label>
+                                        <textarea class="form-control code-editor" rows="12" placeholder="Schreibe hier deinen verbesserten Code..."></textarea>
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <button class="btn btn-primary check-solution">Lösung prüfen</button>
+                                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#solutionsModal">Musterlösung</button>
+                                        </div>
+                                    </div>
+                                    <div class="hints-container bg-light p-3 rounded">
+                                        <h6>Verbesserungstipps:</h6>
+                                        <ul class="mb-0">
+                                            <li>Verwende aussagekräftige Namen</li>
+                                            <li>Teile die Funktion in kleinere Funktionen auf</li>
+                                            <li>Vermeide magische Strings</li>
+                                            <li>Nutze frühe Rückgaben</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Klassen strukturieren</h3>
+                                <div class="code-playground">
+                                    <div class="code-editor-container mb-3">
+                                        <label class="form-label">Original Code:</label>
+                                        <pre class="code-example bg-dark text-light p-3 rounded"><code class="language-javascript">class User {
+    constructor(n, e, p) {
+        this.n = n;
+        this.e = e;
+        this.p = p;
+    }
+    
+    save() {
+        // DB speichern
+        console.log('Saved');
+        // Email senden
+        console.log('Email sent');
+        // Log erstellen
+        console.log('Logged');
+    }
+    
+    validate() {
+        return this.n.length > 0 && 
+               this.e.includes('@') &&
+               this.p.length >= 8;
+    }
+}</code></pre>
+                                        <label class="form-label mt-3">Dein verbesserter Code:</label>
+                                        <textarea class="form-control code-editor" rows="12" placeholder="Schreibe hier deinen verbesserten Code..."></textarea>
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <button class="btn btn-primary check-solution">Lösung prüfen</button>
+                                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#solutionsModal">Musterlösung</button>
+                                        </div>
+                                    </div>
+                                    <div class="hints-container bg-light p-3 rounded">
+                                        <h6>Verbesserungstipps:</h6>
+                                        <ul class="mb-0">
+                                            <li>Wende das Single Responsibility Principle an</li>
+                                            <li>Erstelle separate Service-Klassen</li>
+                                            <li>Füge Typescript-Typen hinzu</li>
+                                            <li>Implementiere Error Handling</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Musterlösungen Modal -->
+        <div class="modal fade" id="solutionsModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Musterlösungen</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="solution-tabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#solution1">Funktionen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#solution2">Klassen</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-3">
+                                <div class="tab-pane fade show active" id="solution1">
+                                    <pre class="bg-light p-3 rounded"><code class="language-javascript">// Typdefinitionen
+type Operation = 'sum' | 'multiply';
+
+// Hauptfunktion mit klarem Namen
+function calculateArrayTotal(
+    numbers: number[],
+    operation: Operation
+): number {
+    if (!numbers.length) {
+        return 0;
+    }
+
+    switch (operation) {
+        case 'sum':
+            return sumArray(numbers);
+        case 'multiply':
+            return multiplyArray(numbers);
+        default:
+            throw new Error(
+                `Ungültige Operation: ${operation}`
+            );
+    }
+}
+
+// Separate Funktionen für einzelne Operationen
+function sumArray(numbers: number[]): number {
+    return numbers.reduce((sum, num) => sum + num, 0);
+}
+
+function multiplyArray(numbers: number[]): number {
+    return numbers.reduce(
+        (product, num) => product * num,
+        1
+    );
+}</code></pre>
+                                </div>
+                                <div class="tab-pane fade" id="solution2">
+                                    <pre class="bg-light p-3 rounded"><code class="language-javascript">interface UserData {
+    name: string;
+    email: string;
+    password: string;
+}
+
+class User {
+    private name: string;
+    private email: string;
+    private password: string;
+
+    constructor(data: UserData) {
+        this.name = data.name;
+        this.email = data.email;
+        this.password = data.password;
+    }
+
+    public getData(): UserData {
+        return {
+            name: this.name,
+            email: this.email,
+            password: this.password
+        };
+    }
+}
+
+class UserValidator {
+    public validate(user: User): boolean {
+        const data = user.getData();
+        return this.validateName(data.name) &&
+               this.validateEmail(data.email) &&
+               this.validatePassword(data.password);
+    }
+
+    private validateName(name: string): boolean {
+        return name.length > 0;
+    }
+
+    private validateEmail(email: string): boolean {
+        return email.includes('@');
+    }
+
+    private validatePassword(password: string): boolean {
+        return password.length >= 8;
+    }
+}
+
+class UserRepository {
+    public async save(user: User): Promise<void> {
+        try {
+            // DB Speicherlogik hier
+            await this.saveToDatabase(user);
+        } catch (error) {
+            throw new Error(
+                `Fehler beim Speichern: ${error.message}`
+            );
+        }
+    }
+
+    private async saveToDatabase(user: User): Promise<void> {
+        // Implementierung hier
+    }
+}
+
+class NotificationService {
+    public async sendWelcomeEmail(user: User): Promise<void> {
+        try {
+            // Email-Logik hier
+            await this.sendEmail(user);
+        } catch (error) {
+            throw new Error(
+                `Fehler beim E-Mail-Versand: ${error.message}`
+            );
+        }
+    }
+
+    private async sendEmail(user: User): Promise<void> {
+        // Implementierung hier
+    }
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Review Modal -->
+        <div class="modal fade" id="reviewModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Code Review Analyse</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 class="mb-3">Probleme im Code:</h6>
+                        <div class="review-checklist">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="check1">
+                                <label class="form-check-label" for="check1">
+                                    Unklare Variablennamen (u, o, t, p)
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="check2">
+                                <label class="form-check-label" for="check2">
+                                    Fehlende Typisierung und Dokumentation
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="check3">
+                                <label class="form-check-label" for="check3">
+                                    Magische Zahlen (0.9)
+                                </label>
+                            </div>
+                        </div>
+                        <h6 class="mt-4 mb-3">Verbesserungsvorschläge:</h6>
+                        <textarea class="form-control" rows="4" placeholder="Schreibe deine Vorschläge hier..."></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                        <button type="button" class="btn btn-primary">Analyse speichern</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Refactoring Modal -->
+        <div class="modal fade" id="refactoringModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Refactoring Challenge</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-4">
+                            <h6>Deine verbesserte Version:</h6>
+                            <textarea class="form-control code-editor" rows="15" placeholder="Schreibe hier deinen verbesserten Code..."></textarea>
+                        </div>
+                        <div class="refactoring-hints">
+                            <h6>Hinweise:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-lightbulb text-warning me-2"></i>Verwende aussagekräftige Namen</li>
+                                <li><i class="fas fa-lightbulb text-warning me-2"></i>Füge Fehlerbehandlung hinzu</li>
+                                <li><i class="fas fa-lightbulb text-warning me-2"></i>Dokumentiere die Klasse und Methoden</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                        <button type="button" class="btn btn-primary">Lösung einreichen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Über diese Lernplattform</h5>
+                    <p>Diese Seite bietet eine umfassende Einführung in Clean Code Prinzipien und Best Practices für Fachinformatiker in der Ausbildung.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Weiterführende Ressourcen</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Clean Code von Robert C. Martin</a></li>
+                        <li><a href="#" class="text-white">Refactoring von Martin Fowler</a></li>
+                        <li><a href="#" class="text-white">Clean Code Cheat Sheet</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Prism.js für Code-Highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+</body>
+</html>

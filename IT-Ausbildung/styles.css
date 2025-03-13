@@ -1,0 +1,800 @@
+/* Custom styles for IT-Ausbildung Portal */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+}
+
+/* General styles */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Hero section enhancements */
+.hero-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
+}
+
+/* Card hover effects */
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Section spacing */
+section {
+    padding: 5rem 0;
+}
+
+/* Custom button styles */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Icon enhancements */
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(13, 110, 253, 0.1);
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Footer improvements */
+.social-icons a {
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Navigation enhancements */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Quiz styles */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.answer-btn {
+    width: 100%;
+    margin: 5px 0;
+    text-align: left;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+    background-color: #e7f1ff;
+    border-color: var(--primary-color);
+}
+
+.answer-btn.selected {
+    background-color: #e7f1ff;
+    border-color: var(--primary-color);
+}
+
+.answer-btn.correct {
+    background-color: #d4edda;
+    border-color: #28a745;
+}
+
+.answer-btn.incorrect {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Practical exercises styles */
+.scenario-box {
+    border-left: 4px solid var(--primary-color);
+    background-color: #f8f9fa;
+}
+
+.exercise ol {
+    counter-reset: exercise-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+.exercise ol li {
+    counter-increment: exercise-counter;
+    margin-bottom: 0.5rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.exercise ol li::before {
+    content: counter(exercise-counter);
+    background-color: var(--primary-color);
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Kanban board styles */
+.task-card {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #dee2e6;
+}
+
+.task-card:hover {
+    background-color: #e9ecef !important;
+    transform: translateY(-2px);
+}
+
+.kanban-board .card-header {
+    font-weight: 600;
+    padding: 0.75rem;
+}
+
+.kanban-board .badge {
+    font-size: 0.75rem;
+}
+
+/* Modal enhancements */
+.modal-content {
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.modal-footer {
+    border-top: 2px solid #f8f9fa;
+}
+
+/* Form styling */
+.form-control {
+    border-radius: 0.5rem;
+    border: 2px solid #dee2e6;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Feature icons */
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #e7f1ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.feature-icon i {
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-text {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .btn-group-responsive {
+        display: grid;
+        gap: 1rem;
+    }
+    
+    .kanban-board .col-md-3 {
+        margin-bottom: 1rem;
+    }
+    
+    .scenario-box {
+        margin-bottom: 2rem;
+    }
+    
+    .exercise ol li {
+        padding-left: 1.5rem;
+    }
+}
+
+/* Clean Code page specific styles */
+.code-example {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.code-example pre {
+    margin: 0;
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.code-example code {
+    font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+.code-smell-example,
+.solution {
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+.code-smell-example pre,
+.solution pre {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.example-box {
+    border-left: 4px solid var(--primary-color);
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.example-box:hover {
+    transform: translateX(5px);
+    box-shadow: -5px 5px 10px rgba(0,0,0,0.1);
+}
+
+.review-checklist .form-check {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+}
+
+.review-checklist .form-check:hover {
+    background-color: #f8f9fa;
+}
+
+.code-editor {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+.refactoring-hints {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.refactoring-hints ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Feature icon animations */
+.feature-icon {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: scale(1.1);
+    background-color: #cfe2ff;
+}
+
+/* Code copy button */
+.code-example .btn-copy {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.code-example:hover .btn-copy {
+    opacity: 1;
+}
+
+/* Modal enhancements */
+.modal-content {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.modal-footer {
+    background-color: #f8f9fa;
+    border-top: 2px solid #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .code-example pre {
+        font-size: 0.8rem;
+    }
+    
+    .example-box {
+        margin: 1rem 0;
+    }
+    
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+}
+
+/* Clean Code page feedback styles */
+.feedback-list {
+    border-top: 2px solid #e9ecef;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.feedback-list li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.feedback-list li:last-child {
+    margin-bottom: 0;
+}
+
+.code-editor {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 1rem;
+    border: 2px solid #dee2e6;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease;
+}
+
+.code-editor:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.hints-container {
+    border-left: 4px solid #ffc107;
+    transition: all 0.3s ease;
+}
+
+.hints-container:hover {
+    background-color: #fff8e5;
+}
+
+.check-solution {
+    position: relative;
+    overflow: hidden;
+}
+
+.check-solution::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.check-solution:active::after {
+    width: 200px;
+    height: 200px;
+}
+
+.solution-feedback {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.solution-feedback.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.code-playground {
+    position: relative;
+}
+
+.code-playground::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    width: 4px;
+    height: 0;
+    background: var(--primary-color);
+    transition: height 0.3s ease;
+}
+
+.code-playground:hover::before {
+    height: 100%;
+}
+
+/* Progress bar animations */
+.progress-bar {
+    transition: width 0.6s ease;
+}
+
+.progress-bar.bg-success {
+    background: linear-gradient(45deg, #28a745, #20c997);
+}
+
+.progress-bar.bg-warning {
+    background: linear-gradient(45deg, #ffc107, #fd7e14);
+}
+
+/* Code example enhancements */
+.code-example {
+    position: relative;
+    overflow: hidden;
+}
+
+.code-example::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.1) 50%);
+}
+
+.code-example pre {
+    margin: 0;
+    padding: 1.5rem;
+}
+
+.code-example code {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Tooltip enhancements */
+.tooltip {
+    font-size: 0.875rem;
+}
+
+.tooltip .tooltip-inner {
+    max-width: 200px;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Modal animations */
+.modal.fade .modal-dialog {
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+}
+
+/* Tab animations */
+.nav-tabs .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-tabs .nav-link.active::after {
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .code-editor {
+        font-size: 0.8rem;
+    }
+    
+    .hints-container {
+        margin-top: 1rem;
+    }
+    
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Version Control Page Styles */
+.command-list {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+.command-item {
+    margin-bottom: 1.5rem;
+}
+
+.command-item:last-child {
+    margin-bottom: 0;
+}
+
+.command-item code {
+    display: inline-block;
+    background: #f8f9fa;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Fira Code', monospace;
+    color: #0d6efd;
+}
+
+.command-item p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.git-simulation {
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.workspace-files {
+    background: white;
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
+.workspace-files li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.workspace-files li:last-child {
+    border-bottom: none;
+}
+
+.workspace-files .fa-file-code {
+    color: #6c757d;
+    margin-right: 0.5rem;
+}
+
+.command-output {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.command-output pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.branch-visualization svg {
+    background: white;
+}
+
+.exercise-controls .btn-group {
+    width: 100%;
+}
+
+.exercise-controls .btn {
+    flex: 1;
+}
+
+/* Git command input styling */
+.git-commands .input-group {
+    background: white;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.git-commands .input-group-text {
+    background: #212529;
+    color: #00ff00;
+    border: none;
+    font-family: 'Fira Code', monospace;
+}
+
+.git-commands .form-control {
+    border: none;
+    font-family: 'Fira Code', monospace;
+    padding: 0.75rem;
+}
+
+.git-commands .form-control:focus {
+    box-shadow: none;
+    background: #f8f9fa;
+}
+
+/* Branch management styling */
+.branch-exercise {
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.branch-visualization {
+    background: white;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    min-height: 200px;
+}
+
+/* Status badges */
+.badge.bg-modified {
+    background-color: #ffc107 !important;
+    color: #000;
+}
+
+.badge.bg-staged {
+    background-color: #198754 !important;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .exercise-controls .btn-group {
+        flex-direction: column;
+    }
+    
+    .exercise-controls .btn {
+        border-radius: 0.25rem !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    .git-commands .input-group {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Animation for branch operations */
+.branch-visualization svg {
+    transition: all 0.3s ease;
+}
+
+.branch-visualization line {
+    transition: all 0.3s ease;
+}
+
+.branch-visualization text {
+    transition: all 0.3s ease;
+}
+
+/* Command history styling */
+.command-history {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: #212529;
+    border-radius: 0.25rem;
+    color: #00ff00;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+}
+
+.command-history-item {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #343a40;
+}
+
+.command-history-item:last-child {
+    border-bottom: none;
+}
+
+/* Git workflow diagram */
+.git-workflow {
+    position: relative;
+    padding: 2rem;
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.git-workflow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #20c997);
+}
+
+/* Interactive elements hover effects */
+.command-item:hover code {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+.workspace-files li:hover {
+    background: #f8f9fa;
+    transition: background-color 0.3s ease;
+}
+
+.git-commands .btn:active {
+    transform: scale(0.98);
+}

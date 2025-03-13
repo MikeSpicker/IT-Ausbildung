@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wartung - IT-Lernplattform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .maintenance-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .maintenance-content {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .icon-container {
+            margin-bottom: 2rem;
+        }
+        .maintenance-icon {
+            font-size: 4rem;
+            color: #007bff;
+            animation: pulse 2s infinite;
+        }
+        .progress {
+            height: 10px;
+            margin: 2rem 0;
+            border-radius: 5px;
+            background-color: #e9ecef;
+        }
+        .progress-bar {
+            width: 75%;
+            background: linear-gradient(90deg, #007bff, #00d4ff);
+            animation: progress-animation 2s;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        @keyframes progress-animation {
+            from { width: 0%; }
+            to { width: 75%; }
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #e3f2fd;
+            color: #0d6efd;
+            border-radius: 50px;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        .message-box {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="maintenance-container">
+        <div class="maintenance-content">
+            <div class="status-badge">
+                <i class="fas fa-tools me-2"></i>
+                Wartungsmodus
+            </div>
+            
+            <div class="icon-container">
+                <i class="fas fa-laptop-code maintenance-icon"></i>
+            </div>
+            
+            <h1 class="display-4 mb-4">Wir sind bald wieder für Sie da!</h1>
+            
+            <div class="message-box">
+                <p class="lead mb-0">Wir erschaffen etwas Großartiges für Sie.</p>
+            </div>
+            
+            <p class="text-muted mb-4">
+                Unser Team arbeitet mit Hochdruck daran, Ihnen eine noch bessere Lernerfahrung zu bieten. 
+                Die Plattform wird in Kürze mit neuen Features und Verbesserungen wieder verfügbar sein.
+            </p>
+            
+            <div class="progress">
+                <div class="progress-bar" role="progressbar"></div>
+            </div>
+            
+            <div class="mt-4">
+                <p class="text-muted mb-2">Geschätzter Fortschritt</p>
+                <h4>75%</h4>
+            </div>
+            
+            <div class="mt-5">
+                <a href="index.html" class="btn btn-outline-primary me-2">
+                    <i class="fas fa-home me-2"></i>
+                    Zur Startseite
+                </a>
+                <a href="mailto:kontakt@it-lernplattform.de" class="btn btn-primary">
+                    <i class="fas fa-envelope me-2"></i>
+                    Kontakt
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

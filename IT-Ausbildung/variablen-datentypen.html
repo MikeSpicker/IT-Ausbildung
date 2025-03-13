@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variablen und Datentypen - IT-Lernplattform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .code-playground {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .code-output {
+            background-color: #2d2d2d;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 100px;
+            margin-top: 10px;
+        }
+        .type-card {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .type-card:hover {
+            transform: translateY(-5px);
+        }
+        .memory-visualization {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .memory-box {
+            border: 2px solid #dee2e6;
+            padding: 10px;
+            margin: 5px;
+            display: inline-block;
+            min-width: 100px;
+            text-align: center;
+            background-color: white;
+        }
+        .memory-address {
+            font-family: monospace;
+            color: #6c757d;
+            font-size: 0.8em;
+        }
+        .memory-value {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .interactive-demo {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">IT-Lernplattform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Startseite</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-primary text-white py-5">
+            <div class="container">
+                <h1 class="display-4">Variablen und Datentypen</h1>
+                <p class="lead">Grundlegende Bausteine der Programmierung verstehen und anwenden</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Left Column: Theory -->
+                    <div class="col-lg-8">
+                        <!-- Variables Introduction -->
+                        <article class="mb-5">
+                            <h2>Was sind Variablen?</h2>
+                            <p class="lead">Variablen sind benannte Speicherplätze für Daten in einem Programm.</p>
+                            
+                            <div class="memory-visualization">
+                                <h5>Speichervisualisierung</h5>
+                                <div id="memoryDemo" class="d-flex flex-wrap">
+                                    <!-- Memory boxes will be added here via JavaScript -->
+                                </div>
+                            </div>
+
+                            <div class="interactive-demo">
+                                <h5>Variablen-Demo</h5>
+                                <div class="code-playground">
+                                    <div class="mb-3">
+                                        <select class="form-select" id="variableType">
+                                            <option value="number">Nummer (number)</option>
+                                            <option value="string">Text (string)</option>
+                                            <option value="boolean">Boolean (true/false)</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="variableName" placeholder="Variablenname">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="variableValue" placeholder="Wert">
+                                    </div>
+                                    <button class="btn btn-primary" id="createVariable">Variable erstellen</button>
+                                    <div class="code-output" id="variableOutput"></div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Data Types -->
+                        <article class="mb-5">
+                            <h2>Grundlegende Datentypen</h2>
+                            <div class="row g-4">
+                                <!-- Number -->
+                                <div class="col-md-6">
+                                    <div class="card type-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <i class="fas fa-hashtag text-primary me-2"></i>
+                                                Zahlen (Number)
+                                            </h5>
+                                            <p class="card-text">Ganze Zahlen und Dezimalzahlen</p>
+                                            <pre><code class="language-javascript">let alter = 25;
+let preis = 19.99;</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- String -->
+                                <div class="col-md-6">
+                                    <div class="card type-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <i class="fas fa-font text-success me-2"></i>
+                                                Text (String)
+                                            </h5>
+                                            <p class="card-text">Zeichenketten und Text</p>
+                                            <pre><code class="language-javascript">let name = "Max";
+let text = 'Hallo Welt!';</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Boolean -->
+                                <div class="col-md-6">
+                                    <div class="card type-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <i class="fas fa-toggle-on text-info me-2"></i>
+                                                Boolean
+                                            </h5>
+                                            <p class="card-text">Wahrheitswerte (true/false)</p>
+                                            <pre><code class="language-javascript">let istAktiv = true;
+let hatZugriff = false;</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Array -->
+                                <div class="col-md-6">
+                                    <div class="card type-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <i class="fas fa-list text-warning me-2"></i>
+                                                Array
+                                            </h5>
+                                            <p class="card-text">Geordnete Liste von Werten</p>
+                                            <pre><code class="language-javascript">let zahlen = [1, 2, 3];
+let namen = ["Max", "Anna"];</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Type Conversion -->
+                        <article class="mb-5">
+                            <h2>Typkonvertierung</h2>
+                            <div class="interactive-demo">
+                                <h5>Konvertierungs-Demo</h5>
+                                <div class="code-playground">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="convertValue" placeholder="Wert zum Konvertieren">
+                                    </div>
+                                    <div class="mb-3">
+                                        <select class="form-select" id="convertType">
+                                            <option value="string">Zu String</option>
+                                            <option value="number">Zu Number</option>
+                                            <option value="boolean">Zu Boolean</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-primary" id="convertType">Konvertieren</button>
+                                    <div class="code-output" id="conversionOutput"></div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Right Column: Practice -->
+                    <div class="col-lg-4">
+                        <!-- Quick Reference -->
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Quick Reference</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <code>typeof variable</code>
+                                        <small class="text-muted d-block">Typ einer Variable prüfen</small>
+                                    </li>
+                                    <li class="mb-2">
+                                        <code>Number(value)</code>
+                                        <small class="text-muted d-block">Zu Zahl konvertieren</small>
+                                    </li>
+                                    <li class="mb-2">
+                                        <code>String(value)</code>
+                                        <small class="text-muted d-block">Zu Text konvertieren</small>
+                                    </li>
+                                    <li class="mb-2">
+                                        <code>Boolean(value)</code>
+                                        <small class="text-muted d-block">Zu Boolean konvertieren</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Practice Exercises -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Übungsaufgaben</h5>
+                                <div id="exercises">
+                                    <div class="exercise mb-4">
+                                        <p>Was ist der Ausgabewert?</p>
+                                        <pre><code class="language-javascript">let x = "5" + 2;</code></pre>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1" value="7">
+                                            <label class="form-check-label">7</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1" value="52">
+                                            <label class="form-check-label">52</label>
+                                        </div>
+                                        <button class="btn btn-sm btn-primary mt-2" onclick="checkAnswer(1)">Prüfen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Weitere Ressourcen</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Data_structures" class="text-white" target="_blank">MDN Web Docs - Datentypen</a></li>
+                        <li><a href="https://javascript.info/types" class="text-white" target="_blank">JavaScript.info - Types</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2025 IT-Lernplattform</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="js/variablen-datentypen.js"></script>
+</body>
+</html>

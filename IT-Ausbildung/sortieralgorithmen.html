@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortieralgorithmen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .array-bar {
+            display: inline-block;
+            margin: 0 1px;
+            background-color: #007bff;
+            transition: height 0.3s ease;
+        }
+        .array-bar.comparing {
+            background-color: #ffc107;
+        }
+        .array-bar.swapping {
+            background-color: #dc3545;
+        }
+        .array-bar.sorted {
+            background-color: #28a745;
+        }
+        .visualization-container {
+            height: 300px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">IT-Lernplattform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Startseite</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-primary text-white py-5">
+            <div class="container">
+                <h1 class="display-4">Sortieralgorithmen</h1>
+                <p class="lead">Lernen Sie die wichtigsten Sortieralgorithmen und ihre Implementierung</p>
+            </div>
+        </section>
+
+        <!-- Algorithm Visualization Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Algorithmen-Visualisierung</h2>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <select class="form-select" id="algorithmSelect">
+                                        <option value="bubble">Bubble Sort</option>
+                                        <option value="selection">Selection Sort</option>
+                                        <option value="insertion">Insertion Sort</option>
+                                        <option value="quick">Quick Sort</option>
+                                        <option value="merge">Merge Sort</option>
+                                        <option value="heap">Heap Sort</option>
+                                        <option value="shell">Shell Sort</option>
+                                        <option value="counting">Counting Sort</option>
+                                    </select>
+                                </div>
+                                <div class="visualization-container" id="visualizationArea">
+                                    <!-- Bars will be generated here -->
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-primary me-2" id="generateArray">Neues Array</button>
+                                    <button class="btn btn-success" id="startSort">Sortierung starten</button>
+                                    <div class="form-check form-check-inline ms-3">
+                                        <input class="form-check-input" type="checkbox" id="slowMode">
+                                        <label class="form-check-label" for="slowMode">Langsamer Modus</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Algorithmus-Details</h5>
+                                <div id="algorithmInfo">
+                                    <!-- Algorithm details will be displayed here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Algorithm Comparison -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Vergleich der Algorithmen</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Algorithmus</th>
+                                <th>Beste Zeit</th>
+                                <th>Durchschnitt</th>
+                                <th>Schlechteste Zeit</th>
+                                <th>Speicherbedarf</th>
+                                <th>Stabil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bubble Sort</td>
+                                <td>O(n)</td>
+                                <td>O(n²)</td>
+                                <td>O(n²)</td>
+                                <td>O(1)</td>
+                                <td>Ja</td>
+                            </tr>
+                            <tr>
+                                <td>Selection Sort</td>
+                                <td>O(n²)</td>
+                                <td>O(n²)</td>
+                                <td>O(n²)</td>
+                                <td>O(1)</td>
+                                <td>Nein</td>
+                            </tr>
+                            <tr>
+                                <td>Insertion Sort</td>
+                                <td>O(n)</td>
+                                <td>O(n²)</td>
+                                <td>O(n²)</td>
+                                <td>O(1)</td>
+                                <td>Ja</td>
+                            </tr>
+                            <tr>
+                                <td>Quick Sort</td>
+                                <td>O(n log n)</td>
+                                <td>O(n log n)</td>
+                                <td>O(n²)</td>
+                                <td>O(log n)</td>
+                                <td>Nein</td>
+                            </tr>
+                            <tr>
+                                <td>Merge Sort</td>
+                                <td>O(n log n)</td>
+                                <td>O(n log n)</td>
+                                <td>O(n log n)</td>
+                                <td>O(n)</td>
+                                <td>Ja</td>
+                            </tr>
+                            <tr>
+                                <td>Heap Sort</td>
+                                <td>O(n log n)</td>
+                                <td>O(n log n)</td>
+                                <td>O(n log n)</td>
+                                <td>O(1)</td>
+                                <td>Nein</td>
+                            </tr>
+                            <tr>
+                                <td>Shell Sort</td>
+                                <td>O(n log n)</td>
+                                <td>O(n log² n)</td>
+                                <td>O(n²)</td>
+                                <td>O(1)</td>
+                                <td>Nein</td>
+                            </tr>
+                            <tr>
+                                <td>Counting Sort</td>
+                                <td>O(n+k)</td>
+                                <td>O(n+k)</td>
+                                <td>O(n+k)</td>
+                                <td>O(k)</td>
+                                <td>Ja</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Implementierungen</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Bubble Sort</h3>
+                                <pre><code class="language-javascript">function bubbleSort(arr) {
+    const n = arr.length;
+    for (let i = 0; i < n - 1; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Tausche Elemente
+                [arr[j], arr[j + 1]] = 
+                    [arr[j + 1], arr[j]];
+            }
+        }
+    }
+    return arr;
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Quick Sort</h3>
+                                <pre><code class="language-javascript">function quickSort(arr, low = 0, high = arr.length - 1) {
+    if (low < high) {
+        const pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+    return arr;
+}
+
+function partition(arr, low, high) {
+    const pivot = arr[high];
+    let i = low - 1;
+    
+    for (let j = low; j < high; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+    }
+    
+    [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+    return i + 1;
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Exercise -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Übungsaufgaben</h2>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Algorithmus-Quiz</h3>
+                                <div id="algorithmQuiz">
+                                    <div class="question mb-4">
+                                        <p>Welcher Algorithmus ist am besten für fast sortierte Arrays geeignet?</p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1" value="bubble">
+                                            <label class="form-check-label">Bubble Sort</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1" value="insertion">
+                                            <label class="form-check-label">Insertion Sort</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="q1" value="quick">
+                                            <label class="form-check-label">Quick Sort</label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" id="checkQuiz">Antworten prüfen</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Implementierungsaufgabe</h3>
+                                <div id="codingChallenge">
+                                    <p>Implementieren Sie Selection Sort:</p>
+                                    <textarea class="form-control code-editor mb-3" rows="10" id="implementationInput"></textarea>
+                                    <button class="btn btn-primary" id="checkImplementation">Code prüfen</button>
+                                    <div id="implementationResult" class="mt-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Weitere Ressourcen</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://visualgo.net/en/sorting" class="text-white" target="_blank">VisuAlgo - Sorting Visualizer</a></li>
+                        <li><a href="https://www.geeksforgeeks.org/sorting-algorithms/" class="text-white" target="_blank">GeeksforGeeks - Sorting Tutorials</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0"> 2025 IT-Lernplattform</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="js/sortieralgorithmen.js"></script>
+</body>
+</html>

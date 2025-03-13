@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Grundlagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">IT-Lernplattform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Startseite</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-primary text-white py-5">
+            <div class="container">
+                <h1 class="display-4">SQL Grundlagen</h1>
+                <p class="lead">Lernen Sie die Grundlagen der Datenbankabfragen mit SQL</p>
+            </div>
+        </section>
+
+        <!-- Grundlagen Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">SQL Basics</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Was ist SQL?</h3>
+                                <p>SQL (Structured Query Language) ist die Standardsprache für:</p>
+                                <ul>
+                                    <li>Datenbankabfragen</li>
+                                    <li>Datenmanipulation</li>
+                                    <li>Datenbankadministration</li>
+                                    <li>Datendefinition</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Wichtige Konzepte</h3>
+                                <ul>
+                                    <li>Tabellen und Relationen</li>
+                                    <li>Primär- und Fremdschlüssel</li>
+                                    <li>CRUD-Operationen</li>
+                                    <li>Joins und Verknüpfungen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SQL Befehle Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Wichtige SQL-Befehle</h2>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Daten Abfragen</h3>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <code>SELECT</code>
+                                        <p>Daten aus einer Tabelle auswählen</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>WHERE</code>
+                                        <p>Bedingungen für die Auswahl festlegen</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>JOIN</code>
+                                        <p>Tabellen miteinander verknüpfen</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>GROUP BY</code>
+                                        <p>Daten gruppieren</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Daten Manipulieren</h3>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <code>INSERT</code>
+                                        <p>Neue Daten einfügen</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>UPDATE</code>
+                                        <p>Bestehende Daten aktualisieren</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>DELETE</code>
+                                        <p>Daten löschen</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>MERGE</code>
+                                        <p>Daten zusammenführen</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Datenbank-Struktur</h3>
+                                <div class="command-list">
+                                    <div class="command-item">
+                                        <code>CREATE</code>
+                                        <p>Neue Tabellen erstellen</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>ALTER</code>
+                                        <p>Tabellenstruktur ändern</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>DROP</code>
+                                        <p>Tabellen löschen</p>
+                                    </div>
+                                    <div class="command-item">
+                                        <code>INDEX</code>
+                                        <p>Indizes verwalten</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interaktive Übungen -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Interaktive Übungen</h2>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">SQL Query Builder</h3>
+                                <div class="sql-playground">
+                                    <div class="table-preview mb-3">
+                                        <h6>Verfügbare Tabellen:</h6>
+                                        <div class="table-list" id="tablePreviews">
+                                            <!-- Tabellen werden durch JS geladen -->
+                                        </div>
+                                    </div>
+                                    <div class="query-editor mb-3">
+                                        <textarea class="form-control code-editor" id="sqlQuery" rows="6" placeholder="SELECT * FROM users;"></textarea>
+                                        <button class="btn btn-primary mt-2" id="runQuery">Query ausführen</button>
+                                    </div>
+                                    <div class="query-result bg-light p-3 rounded">
+                                        <pre id="queryResult">Ergebnisse werden hier angezeigt...</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Übungsaufgaben</h3>
+                                <div class="exercise-container">
+                                    <div class="exercise-list" id="exerciseList">
+                                        <div class="exercise-item mb-4">
+                                            <h6>Aufgabe 1: Grundlegende SELECT-Abfrage</h6>
+                                            <p>Schreiben Sie eine Query, die alle Benutzer aus der Tabelle 'users' abruft.</p>
+                                            <div class="exercise-workspace">
+                                                <textarea class="form-control code-editor mb-2" rows="3"></textarea>
+                                                <button class="btn btn-outline-primary check-solution">Lösung prüfen</button>
+                                            </div>
+                                        </div>
+                                        <div class="exercise-item mb-4">
+                                            <h6>Aufgabe 2: Filtern mit WHERE</h6>
+                                            <p>Finden Sie alle Produkte mit einem Preis über 50€.</p>
+                                            <div class="exercise-workspace">
+                                                <textarea class="form-control code-editor mb-2" rows="3"></textarea>
+                                                <button class="btn btn-outline-primary check-solution">Lösung prüfen</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Best Practices</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Performance</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✅ Indizes richtig einsetzen</li>
+                                    <li class="mb-2">✅ Spezifische Spalten statt *</li>
+                                    <li class="mb-2">✅ WHERE vor JOIN</li>
+                                    <li class="mb-2">❌ Unterabfragen vermeiden</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Sicherheit</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✅ Prepared Statements</li>
+                                    <li class="mb-2">✅ Input validieren</li>
+                                    <li class="mb-2">✅ Minimale Rechte</li>
+                                    <li class="mb-2">❌ SQL-Injection vermeiden</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Wartbarkeit</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✅ Klare Namensgebung</li>
+                                    <li class="mb-2">✅ Kommentare nutzen</li>
+                                    <li class="mb-2">✅ Formatierung</li>
+                                    <li class="mb-2">❌ Redundanz vermeiden</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Weitere Ressourcen</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.w3schools.com/sql/" class="text-white" target="_blank">SQL Tutorial auf W3Schools</a></li>
+                        <li><a href="https://www.postgresql.org/docs/" class="text-white" target="_blank">PostgreSQL Dokumentation</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2025 IT-Lernplattform</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Solutions Modal -->
+    <div class="modal fade" id="solutionsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Musterlösungen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="solution-tabs">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#solution1">Aufgabe 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#solution2">Aufgabe 2</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-3">
+                            <div class="tab-pane fade show active" id="solution1">
+                                <pre><code class="language-sql">SELECT * FROM users;</code></pre>
+                                <p class="mt-2">Diese Query wählt alle Spalten und Zeilen aus der users-Tabelle aus.</p>
+                            </div>
+                            <div class="tab-pane fade" id="solution2">
+                                <pre><code class="language-sql">SELECT * FROM products WHERE price > 50;</code></pre>
+                                <p class="mt-2">Diese Query filtert alle Produkte mit einem Preis über 50€.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="js/sql-grundlagen.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenbankdesign</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">IT-Lernplattform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Startseite</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-primary text-white py-5">
+            <div class="container">
+                <h1 class="display-4">Datenbankdesign</h1>
+                <p class="lead">Lernen Sie die Grundlagen des Datenbankdesigns und der Datenmodellierung</p>
+            </div>
+        </section>
+
+        <!-- Grundlagen Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Grundlagen des Datenbankdesigns</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Datenmodellierung</h3>
+                                <p>Die Datenmodellierung ist der Prozess der:</p>
+                                <ul>
+                                    <li>Strukturierung von Daten</li>
+                                    <li>Definition von Beziehungen</li>
+                                    <li>Festlegung von Regeln</li>
+                                    <li>Optimierung der Datenbankleistung</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Normalformen</h3>
+                                <ul>
+                                    <li>Erste Normalform (1NF)</li>
+                                    <li>Zweite Normalform (2NF)</li>
+                                    <li>Dritte Normalform (3NF)</li>
+                                    <li>Boyce-Codd Normalform (BCNF)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ER-Diagramme Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">ER-Diagramme</h2>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Komponenten</h3>
+                                <div class="er-components">
+                                    <div class="component-item mb-3">
+                                        <h6><i class="fas fa-square text-primary me-2"></i>Entitäten</h6>
+                                        <p>Objekte oder Konzepte in der realen Welt</p>
+                                    </div>
+                                    <div class="component-item mb-3">
+                                        <h6><i class="fas fa-circle text-success me-2"></i>Attribute</h6>
+                                        <p>Eigenschaften einer Entität</p>
+                                    </div>
+                                    <div class="component-item mb-3">
+                                        <h6><i class="fas fa-arrows-alt-h text-danger me-2"></i>Beziehungen</h6>
+                                        <p>Verbindungen zwischen Entitäten</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">ER-Diagramm Editor</h3>
+                                <div id="er-diagram-editor" class="border p-3 rounded">
+                                    <div class="toolbar mb-3">
+                                        <button class="btn btn-sm btn-outline-primary me-2" id="addEntity">
+                                            <i class="fas fa-square me-1"></i>Entität
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-success me-2" id="addAttribute">
+                                            <i class="fas fa-circle me-1"></i>Attribut
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger me-2" id="addRelation">
+                                            <i class="fas fa-arrows-alt-h me-1"></i>Beziehung
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-secondary" id="clearDiagram">
+                                            <i class="fas fa-trash me-1"></i>Löschen
+                                        </button>
+                                    </div>
+                                    <div id="diagram-canvas" class="bg-white" style="height: 400px; border: 1px solid #ddd;">
+                                        <!-- Canvas für das ER-Diagramm -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Normalisierung Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Normalisierung</h2>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Normalisierungsübung</h3>
+                                <div id="normalization-exercise">
+                                    <div class="original-table mb-3">
+                                        <h6>Ursprüngliche Tabelle:</h6>
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Bestellung_ID</th>
+                                                        <th>Kunde</th>
+                                                        <th>Kunde_Email</th>
+                                                        <th>Produkt</th>
+                                                        <th>Preis</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Max Mustermann</td>
+                                                        <td>max@example.com</td>
+                                                        <td>Laptop</td>
+                                                        <td>999.99</td>
+                                                    </tr>
+                                                    <!-- Weitere Beispieldaten -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="normalization-workspace">
+                                        <h6>Ihre Lösung:</h6>
+                                        <div id="normalization-tables">
+                                            <!-- Tabellen werden durch JS hinzugefügt -->
+                                        </div>
+                                        <button class="btn btn-primary mt-3" id="checkNormalization">Normalisierung prüfen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-4">Normalformen erklärt</h3>
+                                <div class="accordion" id="normalizationAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#firstNF">
+                                                Erste Normalform (1NF)
+                                            </button>
+                                        </h2>
+                                        <div id="firstNF" class="accordion-collapse collapse show" data-bs-parent="#normalizationAccordion">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>Atomare Werte in allen Attributen</li>
+                                                    <li>Keine Wiederholungsgruppen</li>
+                                                    <li>Primärschlüssel definiert</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#secondNF">
+                                                Zweite Normalform (2NF)
+                                            </button>
+                                        </h2>
+                                        <div id="secondNF" class="accordion-collapse collapse" data-bs-parent="#normalizationAccordion">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>Erfüllt 1NF</li>
+                                                    <li>Keine partiellen Abhängigkeiten</li>
+                                                    <li>Alle Nicht-Schlüssel-Attribute voll funktional abhängig</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#thirdNF">
+                                                Dritte Normalform (3NF)
+                                            </button>
+                                        </h2>
+                                        <div id="thirdNF" class="accordion-collapse collapse" data-bs-parent="#normalizationAccordion">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>Erfüllt 2NF</li>
+                                                    <li>Keine transitiven Abhängigkeiten</li>
+                                                    <li>Alle Attribute direkt vom Primärschlüssel abhängig</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Best Practices</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Namenskonventionen</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✅ Konsistente Benennungen</li>
+                                    <li class="mb-2">✅ Aussagekräftige Namen</li>
+                                    <li class="mb-2">✅ Einheitliche Sprache</li>
+                                    <li class="mb-2">❌ Abkürzungen vermeiden</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Datenintegrität</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✅ Fremdschlüssel definieren</li>
+                                    <li class="mb-2">✅ Constraints nutzen</li>
+                                    <li class="mb-2">✅ Transaktionen verwenden</li>
+                                    <li class="mb-2">❌ Datenredundanz vermeiden</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="h5 mb-3">Performance</h3>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✅ Indizes richtig setzen</li>
+                                    <li class="mb-2">✅ Normalisierung vs. Denormalisierung</li>
+                                    <li class="mb-2">✅ Partitionierung nutzen</li>
+                                    <li class="mb-2">❌ Überindizierung vermeiden</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Weitere Ressourcen</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.mysql.com/de/products/workbench/" class="text-white" target="_blank">MySQL Workbench</a></li>
+                        <li><a href="https://www.postgresql.org/docs/current/ddl.html" class="text-white" target="_blank">PostgreSQL Schema Design</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2025 IT-Lernplattform</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.6/js/jsplumb.min.js"></script>
+    <script src="js/datenbankdesign.js"></script>
+</body>
+</html>
