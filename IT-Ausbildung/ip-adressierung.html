@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP-Adressierung - Netzwerkgrundlagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="grundlagen.html">IT-Ausbildung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="grundlagen.html">Zurück zu Grundlagen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="mb-4">IP-Adressierung</h1>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>IPv4-Grundlagen</h2>
+                <p>Eine IPv4-Adresse besteht aus 32 Bit, die in vier Oktette aufgeteilt sind. Jedes Oktett wird als Dezimalzahl zwischen 0 und 255 dargestellt.</p>
+                
+                <div class="table-responsive mt-4">
+                    <table class="table table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Klasse</th>
+                                <th>Erster Oktett</th>
+                                <th>Netzanteil</th>
+                                <th>Hostanteil</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                                <td>1-126</td>
+                                <td>8 Bit</td>
+                                <td>24 Bit</td>
+                                <td>10.0.0.0</td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td>128-191</td>
+                                <td>16 Bit</td>
+                                <td>16 Bit</td>
+                                <td>172.16.0.0</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                                <td>192-223</td>
+                                <td>24 Bit</td>
+                                <td>8 Bit</td>
+                                <td>192.168.0.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Subnetting</h2>
+                <p>Subnetting ermöglicht die Aufteilung eines Netzwerks in kleinere Teilnetze. Dies wird durch die Verwendung von Subnetzmasken erreicht.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h4>CIDR-Notation</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">/24 = 255.255.255.0</li>
+                            <li class="list-group-item">/25 = 255.255.255.128</li>
+                            <li class="list-group-item">/26 = 255.255.255.192</li>
+                            <li class="list-group-item">/27 = 255.255.255.224</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Private IP-Bereiche</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">10.0.0.0/8</li>
+                            <li class="list-group-item">172.16.0.0/12</li>
+                            <li class="list-group-item">192.168.0.0/16</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>IPv6-Grundlagen</h2>
+                <p>IPv6 verwendet 128-Bit-Adressen und wird in acht Gruppen von jeweils vier Hexadezimalziffern dargestellt.</p>
+                
+                <div class="alert alert-info mt-4">
+                    <h4>Beispiel einer IPv6-Adresse:</h4>
+                    <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>
+                    <p class="mt-2">Gekürzt: <code>2001:db8:85a3::8a2e:370:7334</code></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Übungsaufgaben</h2>
+                <div class="accordion" id="uebungsAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#uebung1">
+                                Übung 1: Subnetz berechnen
+                            </button>
+                        </h3>
+                        <div id="uebung1" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <p>Berechnen Sie für das Netzwerk 192.168.1.0/24:</p>
+                                <ul>
+                                    <li>Die Netzwerkadresse</li>
+                                    <li>Die Broadcast-Adresse</li>
+                                    <li>Die erste und letzte nutzbare Host-Adresse</li>
+                                </ul>
+                                <button class="btn btn-primary mt-2" onclick="showSolution('uebung1')">Lösung anzeigen</button>
+                                <div class="solution mt-2" id="solution1" style="display: none;">
+                                    <ul>
+                                        <li>Netzwerkadresse: 192.168.1.0</li>
+                                        <li>Broadcast-Adresse: 192.168.1.255</li>
+                                        <li>Erste Host-Adresse: 192.168.1.1</li>
+                                        <li>Letzte Host-Adresse: 192.168.1.254</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Über diesen Kurs</h5>
+                    <p>Dieser Kurs ist Teil der IT-Grundlagenausbildung und vermittelt wichtige Konzepte der Netzwerktechnik.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="grundlagen.html" class="text-white text-decoration-none">Zurück zur Übersicht</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showSolution(id) {
+            document.getElementById('solution' + id.slice(-1)).style.display = 'block';
+        }
+    </script>
+</body>
+</html> 

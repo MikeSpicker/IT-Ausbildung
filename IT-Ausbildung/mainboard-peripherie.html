@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mainboard und Peripherie - Hardware Grundlagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #0099ff 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 2rem 2rem;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background: #f8f9fa;
+            border-radius: 1rem 1rem 0 0 !important;
+        }
+        .list-group-item {
+            border-left: 4px solid #0d6efd;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+        }
+        .component-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #0d6efd;
+        }
+        .table {
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #e7f1ff;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="grundlagen.html">IT-Ausbildung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="grundlagen.html">Zurück zu Grundlagen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="display-4 mb-3"><i class="fas fa-microchip me-3"></i>Mainboard und Peripherie</h1>
+            <p class="lead">Entdecken Sie die wichtigsten Komponenten und Grundlagen der PC-Hardware</p>
+        </div>
+    </div>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-puzzle-piece component-icon"></i>Mainboard-Komponenten</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <h5><i class="fas fa-microchip me-2"></i>CPU-Sockel</h5>
+                                <p class="mb-0">Aufnahme für den Prozessor (z.B. AM4, LGA1700)</p>
+                            </div>
+                            <div class="list-group-item">
+                                <h5><i class="fas fa-network-wired me-2"></i>Chipsatz</h5>
+                                <p class="mb-0">Steuert die Kommunikation zwischen Komponenten</p>
+                            </div>
+                            <div class="list-group-item">
+                                <h5><i class="fas fa-memory me-2"></i>RAM-Slots</h5>
+                                <p class="mb-0">Steckplätze für Arbeitsspeicher</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-plug component-icon"></i>Anschlüsse</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <h5><i class="fas fa-hdd me-2"></i>SATA</h5>
+                                <p class="mb-0">Für Festplatten und SSDs</p>
+                            </div>
+                            <div class="list-group-item">
+                                <h5><i class="fas fa-bolt me-2"></i>M.2</h5>
+                                <p class="mb-0">Für moderne NVMe SSDs</p>
+                            </div>
+                            <div class="list-group-item">
+                                <h5><i class="fas fa-usb me-2"></i>USB-Header</h5>
+                                <p class="mb-0">Interne USB-Anschlüsse</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Formfaktoren</h2>
+                <div class="table-responsive mt-4">
+                    <table class="table table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Formfaktor</th>
+                                <th>Größe</th>
+                                <th>Typische Verwendung</th>
+                                <th>Besonderheiten</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ATX</td>
+                                <td>305 x 244 mm</td>
+                                <td>Desktop-PCs</td>
+                                <td>Standard für die meisten PCs</td>
+                            </tr>
+                            <tr>
+                                <td>Micro-ATX</td>
+                                <td>244 x 244 mm</td>
+                                <td>Kompakte PCs</td>
+                                <td>Weniger Erweiterungsslots</td>
+                            </tr>
+                            <tr>
+                                <td>Mini-ITX</td>
+                                <td>170 x 170 mm</td>
+                                <td>HTPC, Mini-PCs</td>
+                                <td>Sehr kompakt, limitierte Erweiterbarkeit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Peripheriegeräte</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Eingabegeräte</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Tastatur</h5>
+                                <ul>
+                                    <li>Mechanisch</li>
+                                    <li>Membran</li>
+                                    <li>Scissor-Switch</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Maus</h5>
+                                <ul>
+                                    <li>Optisch</li>
+                                    <li>Laser</li>
+                                    <li>Trackball</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Ausgabegeräte</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Monitor</h5>
+                                <ul>
+                                    <li>LCD</li>
+                                    <li>LED</li>
+                                    <li>OLED</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Drucker</h5>
+                                <ul>
+                                    <li>Tintenstrahldrucker</li>
+                                    <li>Laserdrucker</li>
+                                    <li>3D-Drucker</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Übungsaufgaben</h2>
+                <div class="accordion" id="uebungsAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#uebung1">
+                                Übung 1: Mainboard-Komponenten identifizieren
+                            </button>
+                        </h3>
+                        <div id="uebung1" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <p>Ordnen Sie die folgenden Komponenten ihrer Funktion zu:</p>
+                                <ul>
+                                    <li>PCIe x16 Slot</li>
+                                    <li>24-Pin ATX</li>
+                                    <li>DIMM Slots</li>
+                                    <li>VRM</li>
+                                </ul>
+                                <button class="btn btn-primary mt-2" onclick="showSolution('uebung1')">Lösung anzeigen</button>
+                                <div class="solution mt-2" id="solution1" style="display: none;">
+                                    <ul>
+                                        <li>PCIe x16 Slot: Grafikkarten-Anschluss</li>
+                                        <li>24-Pin ATX: Hauptstromversorgung</li>
+                                        <li>DIMM Slots: RAM-Steckplätze</li>
+                                        <li>VRM: Spannungsversorgung CPU</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-info-circle me-2"></i>Über diesen Kurs</h5>
+                    <p>Dieser Kurs ist Teil der IT-Grundlagenausbildung und vermittelt wichtige Konzepte der Computerhardware.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="grundlagen.html" class="btn btn-outline-light">
+                        <i class="fas fa-arrow-left me-2"></i>Zurück zur Übersicht
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showSolution(id) {
+            document.getElementById('solution' + id.slice(-1)).style.display = 'block';
+        }
+    </script>
+</body>
+</html> 

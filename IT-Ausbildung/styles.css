@@ -798,3 +798,146 @@ section {
 .git-commands .btn:active {
     transform: scale(0.98);
 }
+
+/* Hardware und Betriebssysteme Spezifische Styles */
+.feature-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card .card-header {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    color: white;
+    border: none;
+    padding: 1.5rem;
+}
+
+.feature-card .card-body {
+    padding: 2rem;
+}
+
+.spec-list {
+    list-style: none;
+    padding: 0;
+}
+
+.spec-list li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #2193b0;
+    transition: all 0.2s ease;
+}
+
+.spec-list li:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.tech-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2193b0;
+}
+
+.comparison-table th {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    color: white;
+    border: none;
+}
+
+.comparison-table td {
+    vertical-align: middle;
+}
+
+.info-box {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid #2193b0;
+}
+
+.info-box h4 {
+    color: #2193b0;
+    margin-bottom: 1rem;
+}
+
+.progress-container {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+.hardware-diagram {
+    max-width: 100%;
+    height: auto;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.os-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.os-feature:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.os-feature i {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: #2193b0;
+}
+
+.code-example {
+    background: #2d3436;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    font-family: monospace;
+}
+
+.terminal-window {
+    background: #2d3436;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    font-family: monospace;
+    position: relative;
+}
+
+.terminal-window::before {
+    content: "● ● ●";
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    color: #636e72;
+}

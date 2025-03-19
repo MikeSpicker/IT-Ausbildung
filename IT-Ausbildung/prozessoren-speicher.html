@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prozessoren und Speicher - Hardware Grundlagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="grundlagen.html">IT-Ausbildung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="grundlagen.html">Zurück zu Grundlagen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="display-4 mb-4">Prozessoren und Speicher</h1>
+                <p class="lead text-muted">Grundlagen der Computer-Hardware und Speichertechnologien</p>
+            </div>
+        </div>
+        
+        <div class="feature-card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-microchip me-2"></i>CPU (Central Processing Unit)</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">Die CPU ist das "Gehirn" des Computers und führt die grundlegenden arithmetischen, logischen und Ein-/Ausgabe-Operationen aus.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <h4><i class="fas fa-cogs me-2"></i>Wichtige CPU-Komponenten</h4>
+                            <ul class="spec-list">
+                                <li>
+                                    <h5>ALU (Arithmetic Logic Unit)</h5>
+                                    <p class="mb-0">Führt mathematische und logische Operationen aus</p>
+                                </li>
+                                <li>
+                                    <h5>Steuerwerk</h5>
+                                    <p class="mb-0">Steuert den Programmablauf und koordiniert alle Komponenten</p>
+                                </li>
+                                <li>
+                                    <h5>Register</h5>
+                                    <p class="mb-0">Schnelle Zwischenspeicher für Daten und Befehle</p>
+                                </li>
+                                <li>
+                                    <h5>Cache</h5>
+                                    <p class="mb-0">Schneller Zwischenspeicher für häufig benötigte Daten</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <h4><i class="fas fa-tachometer-alt me-2"></i>Wichtige CPU-Kennzahlen</h4>
+                            <div class="progress-container">
+                                <h5>Taktfrequenz</h5>
+                                <p class="mb-1">Typisch: 3.5 - 5.0 GHz</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-container">
+                                <h5>Kerne</h5>
+                                <p class="mb-1">Typisch: 6 - 16 Kerne</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-container">
+                                <h5>Cache-Größe</h5>
+                                <p class="mb-1">L3: bis zu 64MB</p>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-layer-group me-2"></i>Speicherhierarchie</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive mt-4">
+                    <table class="table table-bordered comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Speichertyp</th>
+                                <th>Geschwindigkeit</th>
+                                <th>Kapazität</th>
+                                <th>Kosten pro GB</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="fas fa-microchip me-2"></i>CPU Register</td>
+                                <td>< 1ns</td>
+                                <td>Bytes</td>
+                                <td>Sehr hoch</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-memory me-2"></i>Cache (L1-L3)</td>
+                                <td>2-20ns</td>
+                                <td>KB-MB</td>
+                                <td>Hoch</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-memory me-2"></i>RAM</td>
+                                <td>50-100ns</td>
+                                <td>GB</td>
+                                <td>Mittel</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-hdd me-2"></i>SSD</td>
+                                <td>100µs</td>
+                                <td>TB</td>
+                                <td>Niedrig</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-hdd me-2"></i>HDD</td>
+                                <td>10ms</td>
+                                <td>TB</td>
+                                <td>Sehr niedrig</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-memory me-2"></i>RAM (Random Access Memory)</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <h4>RAM-Typen</h4>
+                            <ul class="spec-list">
+                                <li>
+                                    <h5>DDR4</h5>
+                                    <p class="mb-0">Aktueller Standard, 2133-3200 MHz</p>
+                                </li>
+                                <li>
+                                    <h5>DDR5</h5>
+                                    <p class="mb-0">Neuer Standard, 4800-6400 MHz</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <h4>Wichtige Eigenschaften</h4>
+                            <ul class="spec-list">
+                                <li>Flüchtiger Speicher</li>
+                                <li>Direkter Zugriff</li>
+                                <li>Hohe Geschwindigkeit</li>
+                                <li>Arbeitspeicher für aktive Programme</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-tasks me-2"></i>Übungsaufgaben</h2>
+            </div>
+            <div class="card-body">
+                <div class="accordion" id="uebungsAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#uebung1">
+                                <i class="fas fa-question-circle me-2"></i>Übung 1: Speicherhierarchie
+                            </button>
+                        </h3>
+                        <div id="uebung1" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <div class="info-box">
+                                    <p>Ordnen Sie die folgenden Speichertypen nach Geschwindigkeit (von schnell nach langsam):</p>
+                                    <ul class="spec-list">
+                                        <li>RAM</li>
+                                        <li>HDD</li>
+                                        <li>CPU Cache</li>
+                                        <li>SSD</li>
+                                    </ul>
+                                    <button class="btn btn-primary mt-3" onclick="showSolution('uebung1')">
+                                        <i class="fas fa-lightbulb me-2"></i>Lösung anzeigen
+                                    </button>
+                                    <div class="solution mt-3" id="solution1" style="display: none;">
+                                        <ol class="spec-list">
+                                            <li>CPU Cache (schnellster)</li>
+                                            <li>RAM</li>
+                                            <li>SSD</li>
+                                            <li>HDD (langsamster)</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Über diesen Kurs</h5>
+                    <p>Dieser Kurs ist Teil der IT-Grundlagenausbildung und vermittelt wichtige Konzepte der Computerhardware.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="grundlagen.html" class="text-white text-decoration-none">Zurück zur Übersicht</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showSolution(id) {
+            document.getElementById('solution' + id.slice(-1)).style.display = 'block';
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dateisysteme - Betriebssysteme Grundlagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            margin-bottom: 2rem;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: none;
+            padding: 1.5rem;
+        }
+        .section-icon {
+            font-size: 2rem;
+            color: #0d6efd;
+            margin-bottom: 1rem;
+        }
+        .list-group-item {
+            border: none;
+            margin-bottom: 0.5rem;
+            border-radius: 8px !important;
+            background-color: #f8f9fa;
+        }
+        .table th {
+            background-color: #e7f1ff;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #e7f1ff;
+            color: #0d6efd;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4, h5 {
+            color: #2c3e50;
+        }
+        .feature-icon {
+            margin-right: 10px;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="grundlagen.html">IT-Ausbildung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="grundlagen.html">Zurück zu Grundlagen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="mb-4 text-center"><i class="fas fa-hdd section-icon"></i><br>Dateisysteme</h1>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="mb-4"><i class="fas fa-info-circle feature-icon"></i>Grundlagen der Dateisysteme</h2>
+                <p class="lead">Ein Dateisystem organisiert die Speicherung und Verwaltung von Daten auf Speichermedien.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-cube feature-icon"></i>Grundlegende Konzepte</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5><i class="fas fa-file feature-icon"></i>Datei</h5>
+                                <p>Eine benannte Sammlung von Daten</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5><i class="fas fa-folder feature-icon"></i>Verzeichnis</h5>
+                                <p>Container für Dateien und andere Verzeichnisse</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5><i class="fas fa-route feature-icon"></i>Pfad</h5>
+                                <p>Eindeutige Adresse einer Datei im System</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-cogs feature-icon"></i>Dateieigenschaften</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item"><i class="fas fa-tag feature-icon"></i>Name und Erweiterung</li>
+                            <li class="list-group-item"><i class="fas fa-database feature-icon"></i>Größe und Speicherort</li>
+                            <li class="list-group-item"><i class="fas fa-lock feature-icon"></i>Zugriffsrechte</li>
+                            <li class="list-group-item"><i class="fas fa-clock feature-icon"></i>Zeitstempel (Erstellung, Änderung)</li>
+                            <li class="list-group-item"><i class="fas fa-shield-alt feature-icon"></i>Attribute (versteckt, schreibgeschützt)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="mb-4"><i class="fas fa-server feature-icon"></i>Dateisystemtypen</h2>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-primary">
+                            <tr>
+                                <th><i class="fas fa-hdd feature-icon"></i>Dateisystem</th>
+                                <th><i class="fas fa-desktop feature-icon"></i>Betriebssystem</th>
+                                <th><i class="fas fa-database feature-icon"></i>Max. Dateigröße</th>
+                                <th><i class="fas fa-star feature-icon"></i>Besonderheiten</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-light">
+                                <td><strong>NTFS</strong></td>
+                                <td><i class="fab fa-windows text-primary"></i> Windows</td>
+                                <td>16 TB - 256 TB</td>
+                                <td>Journaling, Verschlüsselung, Quotas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ext4</strong></td>
+                                <td><i class="fab fa-linux text-dark"></i> Linux</td>
+                                <td>16 TB - 64 PB</td>
+                                <td>Journaling, Extents, schnelle FSck</td>
+                            </tr>
+                            <tr class="table-light">
+                                <td><strong>APFS</strong></td>
+                                <td><i class="fab fa-apple text-dark"></i> macOS</td>
+                                <td>8 EiB</td>
+                                <td>Snapshots, Verschlüsselung, SSD-optimiert</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FAT32</strong></td>
+                                <td><i class="fas fa-globe text-primary"></i> Universal</td>
+                                <td>4 GB</td>
+                                <td>Breite Kompatibilität</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="mb-4"><i class="fas fa-tasks feature-icon"></i>Dateisystemoperationen</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-tools feature-icon"></i>Grundoperationen</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5><i class="fas fa-plus-circle feature-icon"></i>Erstellen</h5>
+                                <p>Neue Dateien und Verzeichnisse anlegen</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5><i class="fas fa-exchange-alt feature-icon"></i>Lesen/Schreiben</h5>
+                                <p>Zugriff auf Dateiinhalte</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5><i class="fas fa-trash-alt feature-icon"></i>Löschen</h5>
+                                <p>Entfernen von Dateien und Verzeichnissen</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-layer-group feature-icon"></i>Erweiterte Operationen</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5><i class="fas fa-puzzle-piece feature-icon"></i>Defragmentierung</h5>
+                                <p>Optimierung der Dateianordnung</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5><i class="fas fa-save feature-icon"></i>Backup</h5>
+                                <p>Sicherung von Dateien und Verzeichnissen</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5><i class="fas fa-compress feature-icon"></i>Komprimierung</h5>
+                                <p>Platzsparende Speicherung</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="mb-4"><i class="fas fa-graduation-cap feature-icon"></i>Übungsaufgaben</h2>
+                <div class="accordion" id="uebungsAccordion">
+                    <div class="accordion-item border-0 shadow-sm mb-3">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button rounded" type="button" data-bs-toggle="collapse" data-bs-target="#uebung1">
+                                <i class="fas fa-question-circle feature-icon"></i>Übung 1: Dateisystemauswahl
+                            </button>
+                        </h3>
+                        <div id="uebung1" class="accordion-collapse collapse show">
+                            <div class="accordion-body bg-light">
+                                <p class="lead">Welches Dateisystem würden Sie in folgenden Szenarien wählen?</p>
+                                <ul class="list-group mb-3">
+                                    <li class="list-group-item"><i class="fas fa-usb feature-icon"></i>USB-Stick für Datenaustausch zwischen verschiedenen Betriebssystemen</li>
+                                    <li class="list-group-item"><i class="fas fa-laptop feature-icon"></i>Systempartition eines Windows 10 Rechners</li>
+                                    <li class="list-group-item"><i class="fas fa-film feature-icon"></i>Netzwerkspeicher für große Videodateien</li>
+                                </ul>
+                                <button class="btn btn-primary mt-2" onclick="showSolution('uebung1')">
+                                    <i class="fas fa-lightbulb"></i> Lösung anzeigen
+                                </button>
+                                <div class="solution mt-3 p-3 bg-white rounded shadow-sm" id="solution1" style="display: none;">
+                                    <h5><i class="fas fa-check-circle text-success"></i> Musterlösung:</h5>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><i class="fas fa-usb feature-icon"></i>USB-Stick: FAT32 (beste Kompatibilität)</li>
+                                        <li class="list-group-item"><i class="fas fa-laptop feature-icon"></i>Windows 10: NTFS (Sicherheit und Performance)</li>
+                                        <li class="list-group-item"><i class="fas fa-film feature-icon"></i>Videodateien: NTFS oder ext4 (große Dateien)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Über diesen Kurs</h5>
+                    <p>Dieser Kurs ist Teil der IT-Grundlagenausbildung und vermittelt wichtige Konzepte der Betriebssysteme.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="grundlagen.html" class="text-white text-decoration-none">Zurück zur Übersicht</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showSolution(id) {
+            document.getElementById('solution' + id.slice(-1)).style.display = 'block';
+        }
+    </script>
+</body>
+</html> 

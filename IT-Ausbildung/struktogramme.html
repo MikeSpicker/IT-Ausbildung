@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktogramme und Diagramme - Programmierung Grundlagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        h1, h2, h3, h4, h5 {
+            color: #2c3e50;
+        }
+        .list-group-item {
+            border-left: 4px solid #007bff;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .table th {
+            background-color: #e3f2fd;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #e3f2fd;
+            color: #0056b3;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+        }
+        .btn-primary:hover {
+            background-color: #003d82;
+        }
+        .solution {
+            background-color: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #0056b3;
+        }
+        footer {
+            margin-top: 4rem;
+        }
+        .icon-box {
+            text-align: center;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .icon-box i {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 1rem;
+        }
+        .svg-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .svg-diagram {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="grundlagen.html">IT-Ausbildung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="grundlagen.html">Zurück zu Grundlagen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-primary text-white py-5">
+        <div class="container">
+            <h1 class="display-4">Variablen und Datentypen</h1>
+            <p class="lead">Grundlegende Bausteine der Programmierung verstehen und anwenden</p>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="display-4 mb-4">Struktogramme und Diagramme</h1>
+                <p class="lead text-muted">Visualisieren Sie Ihre Algorithmen und Systeme professionell</p>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <div class="icon-box">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Strukturiert</h3>
+                    <p>Klare und übersichtliche Darstellung von Algorithmen</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="icon-box">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Standardisiert</h3>
+                    <p>Einheitliche Notation für besseres Verständnis</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="icon-box">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Praktisch</h3>
+                    <p>Effektive Planungshilfe für die Entwicklung</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Nassi-Shneiderman-Diagramm (Klassisches Struktogramm)</h2>
+                <p>Ein Struktogramm (auch Nassi-Shneiderman-Diagramm) ist eine grafische Darstellung eines Algorithmus. Es hilft dabei, den Programmablauf übersichtlich und standardisiert darzustellen.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h4>Vorteile von Struktogrammen</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Übersichtlichkeit</h5>
+                                <p>Klare visuelle Darstellung des Programmablaufs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Standardisierung</h5>
+                                <p>Einheitliche Notation für alle Kontrollstrukturen</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Planungshilfe</h5>
+                                <p>Unterstützt bei der Programmentwicklung</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Grundregeln</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">Von oben nach unten lesen</li>
+                            <li class="list-group-item">Ein Eingang, ein Ausgang</li>
+                            <li class="list-group-item">Keine sich überschneidenden Linien</li>
+                            <li class="list-group-item">Standardisierte Symbole verwenden</li>
+                            <li class="list-group-item">Klare Beschriftungen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Grundlegende Strukturen</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Struktur</th>
+                                <th>Symbol</th>
+                                <th>Verwendung</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Anweisung</td>
+                                <td>Rechteck</td>
+                                <td>Einzelne Operation</td>
+                                <td>x = 5</td>
+                            </tr>
+                            <tr>
+                                <td>Verzweigung</td>
+                                <td>Raute</td>
+                                <td>if-else Entscheidung</td>
+                                <td>if (x > 0)</td>
+                            </tr>
+                            <tr>
+                                <td>Schleife</td>
+                                <td>Rechteck mit Schleifenkopf</td>
+                                <td>Wiederholungen</td>
+                                <td>for (i=0; i<10; i++)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Kontrollstrukturen im Detail</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>Sequenz</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Eigenschaften</h5>
+                                <p>Aufeinanderfolgende Anweisungen</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Darstellung</h5>
+                                <p>Übereinander angeordnete Rechtecke</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Selektion</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>If-Then</h5>
+                                <p>Einseitige Verzweigung</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>If-Then-Else</h5>
+                                <p>Zweiseitige Verzweigung</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Iteration</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Kopfgesteuert</h5>
+                                <p>While-Schleife</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Fußgesteuert</h5>
+                                <p>Do-While-Schleife</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>UML-Diagramme</h2>
+                <p>Die Unified Modeling Language (UML) bietet verschiedene Diagrammtypen zur Visualisierung von Software-Systemen.</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h4>Strukturdiagramme</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Klassendiagramm</h5>
+                                <p>Zeigt Klassen, deren Attribute, Methoden und Beziehungen</p>
+                                <ul>
+                                    <li>Vererbung (Generalisierung)</li>
+                                    <li>Aggregation und Komposition</li>
+                                    <li>Assoziationen</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Objektdiagramm</h5>
+                                <p>Stellt konkrete Objekte und ihre Beziehungen dar</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Komponentendiagramm</h5>
+                                <p>Visualisiert die Systemarchitektur und Abhängigkeiten</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Verhaltensdiagramme</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Aktivitätsdiagramm</h5>
+                                <p>Beschreibt Abläufe und Prozesse</p>
+                                <ul>
+                                    <li>Verzweigungen und Zusammenführungen</li>
+                                    <li>Parallelität</li>
+                                    <li>Start- und Endknoten</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Sequenzdiagramm</h5>
+                                <p>Zeigt zeitliche Abfolge von Objektinteraktionen</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Anwendungsfalldiagramm</h5>
+                                <p>Stellt Systemfunktionen aus Benutzersicht dar</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Weitere Diagrammtypen</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>ER-Diagramme</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Entitäten</h5>
+                                <p>Objekte der realen Welt</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Beziehungen</h5>
+                                <p>1:1, 1:n, n:m Verbindungen</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Attribute</h5>
+                                <p>Eigenschaften der Entitäten</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Flussdiagramme</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Prozessablauf</h5>
+                                <p>Start, Ende, Verarbeitung, Entscheidung</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Datenfluss</h5>
+                                <p>Ein- und Ausgabe, Datenspeicherung</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Übungsaufgaben</h2>
+                <div class="accordion" id="uebungsAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#uebung1">
+                                Übung 1: Klassisches Struktogramm
+                            </button>
+                        </h3>
+                        <div id="uebung1" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <p>Erstellen Sie ein Struktogramm für folgenden Algorithmus:</p>
+                                <pre class="bg-light p-3">
+Lies eine Zahl x ein
+Wenn x > 0 dann
+    Ausgabe "positiv"
+sonst wenn x < 0 dann
+    Ausgabe "negativ"
+sonst
+    Ausgabe "Null"</pre>
+                                
+                                <div class="svg-container">
+                                    <h5 class="text-center mb-3" style="color: #0056b3;">Beispiel:</h5>
+                                    <svg class="svg-diagram" viewBox="0 0 400 500">
+                                        <!-- Einlesen -->
+                                        <rect x="50" y="20" width="300" height="40" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="200" y="45" text-anchor="middle" fill="#2c3e50">Lies eine Zahl x ein</text>
+                                        
+                                        <!-- Verzweigung x > 0 -->
+                                        <path d="M50,60 L350,60 L200,100 Z" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="200" y="85" text-anchor="middle" fill="#2c3e50">x > 0</text>
+                                        
+                                        <!-- Ja-Zweig -->
+                                        <rect x="50" y="100" width="150" height="40" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="125" y="125" text-anchor="middle" fill="#2c3e50">Ausgabe "positiv"</text>
+                                        
+                                        <!-- Verzweigung x < 0 -->
+                                        <path d="M200,100 L350,100 L275,140 L200,100" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="275" y="125" text-anchor="middle" fill="#2c3e50">x < 0</text>
+                                        
+                                        <!-- Ja-Zweig für x < 0 -->
+                                        <rect x="200" y="140" width="150" height="40" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="275" y="165" text-anchor="middle" fill="#2c3e50">Ausgabe "negativ"</text>
+                                        
+                                        <!-- Sonst-Zweig -->
+                                        <rect x="275" y="180" width="75" height="40" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="312.5" y="205" text-anchor="middle" fill="#2c3e50">Ausgabe "Null"</text>
+                                    </svg>
+                                </div>
+                                
+                                <button class="btn btn-primary mt-2" onclick="showSolution('uebung1')">Lösung anzeigen</button>
+                                <div class="solution mt-2" id="solution1" style="display: none;">
+                                    <p>Das Struktogramm sollte folgende Elemente enthalten:</p>
+                                    <ul>
+                                        <li>Ein Rechteck für "Lies eine Zahl x ein"</li>
+                                        <li>Eine verschachtelte Verzweigung für die Bedingungen x > 0 und x < 0</li>
+                                        <li>Drei Rechtecke für die Ausgaben "positiv", "negativ" und "Null"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uebung2">
+                                Übung 2: Klassendiagramm
+                            </button>
+                        </h3>
+                        <div id="uebung2" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <p>Erstellen Sie ein Klassendiagramm für ein Bibliothekssystem mit folgenden Anforderungen:</p>
+                                <ul>
+                                    <li>Bücher haben Titel, ISBN, Autor und Status (ausgeliehen/verfügbar)</li>
+                                    <li>Benutzer haben Name, ID und können Bücher ausleihen</li>
+                                    <li>Eine Ausleihe hat Datum und Rückgabefrist</li>
+                                </ul>
+                                
+                                <div class="svg-container">
+                                    <h5 class="text-center mb-3" style="color: #0056b3;">Beispiel:</h5>
+                                    <svg class="svg-diagram" viewBox="0 0 500 400">
+                                        <!-- Klasse Buch -->
+                                        <rect x="50" y="20" width="200" height="120" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <line x1="50" y1="50" x2="250" y2="50" stroke="#0056b3" stroke-width="2"/>
+                                        <line x1="50" y1="90" x2="250" y2="90" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="150" y="40" text-anchor="middle" font-weight="bold" fill="#2c3e50">Buch</text>
+                                        <text x="60" y="70" fill="#2c3e50">- titel: String</text>
+                                        <text x="60" y="110" fill="#2c3e50">+ ausleihen(): void</text>
+                                        
+                                        <!-- Klasse Benutzer -->
+                                        <rect x="300" y="20" width="200" height="120" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <line x1="300" y1="50" x2="500" y2="50" stroke="#0056b3" stroke-width="2"/>
+                                        <line x1="300" y1="90" x2="500" y2="90" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="400" y="40" text-anchor="middle" font-weight="bold" fill="#2c3e50">Benutzer</text>
+                                        <text x="310" y="70" fill="#2c3e50">- name: String</text>
+                                        <text x="310" y="110" fill="#2c3e50">+ buchAusleihen(): void</text>
+                                        
+                                        <!-- Verbindungslinie -->
+                                        <line x1="250" y1="80" x2="300" y2="80" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="275" y="70" text-anchor="middle" fill="#2c3e50">1..n</text>
+                                    </svg>
+                                </div>
+                                
+                                <button class="btn btn-primary mt-2" onclick="showSolution('uebung2')">Lösung anzeigen</button>
+                                <div class="solution mt-2" id="solution2" style="display: none;">
+                                    <p>Das Klassendiagramm sollte enthalten:</p>
+                                    <ul>
+                                        <li>Klasse Buch:
+                                            <br>- titel: String
+                                            <br>- isbn: String
+                                            <br>- autor: String
+                                            <br>- status: Boolean
+                                            <br>+ ausleihen(): void
+                                            <br>+ zurückgeben(): void
+                                        </li>
+                                        <li>Klasse Benutzer:
+                                            <br>- name: String
+                                            <br>- id: Integer
+                                            <br>+ buchAusleihen(buch: Buch): void
+                                        </li>
+                                        <li>Klasse Ausleihe:
+                                            <br>- datum: Date
+                                            <br>- rückgabefrist: Date
+                                            <br>+ verlängern(): void
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uebung3">
+                                Übung 3: Aktivitätsdiagramm
+                            </button>
+                        </h3>
+                        <div id="uebung3" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <p>Erstellen Sie ein Aktivitätsdiagramm für einen Online-Bestellprozess:</p>
+                                
+                                <div class="svg-container">
+                                    <h5 class="text-center mb-3" style="color: #0056b3;">Beispiel:</h5>
+                                    <svg class="svg-diagram" viewBox="0 0 400 600">
+                                        <!-- Startknoten -->
+                                        <circle cx="200" cy="30" r="15" fill="#0056b3"/>
+                                        
+                                        <!-- Aktivität "Produkte auswählen" -->
+                                        <rect x="100" y="60" width="200" height="40" rx="10" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="200" y="85" text-anchor="middle" fill="#2c3e50">Produkte auswählen</text>
+                                        
+                                        <!-- Raute für Verfügbarkeitsprüfung -->
+                                        <path d="M200,120 L250,160 L200,200 L150,160 Z" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="200" y="165" text-anchor="middle" fill="#2c3e50">Verfügbar?</text>
+                                        
+                                        <!-- Weitere Aktivitäten -->
+                                        <rect x="100" y="220" width="200" height="40" rx="10" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="200" y="245" text-anchor="middle" fill="#2c3e50">Lieferadresse eingeben</text>
+                                        
+                                        <rect x="100" y="280" width="200" height="40" rx="10" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="200" y="305" text-anchor="middle" fill="#2c3e50">Zahlung durchführen</text>
+                                        
+                                        <!-- Endknoten -->
+                                        <circle cx="200" cy="350" r="15" fill="#0056b3" stroke="white" stroke-width="2"/>
+                                        
+                                        <!-- Verbindungslinien -->
+                                        <line x1="200" y1="45" x2="200" y2="60" stroke="#0056b3" stroke-width="2"/>
+                                        <line x1="200" y1="100" x2="200" y2="120" stroke="#0056b3" stroke-width="2"/>
+                                        <line x1="200" y1="200" x2="200" y2="220" stroke="#0056b3" stroke-width="2"/>
+                                        <line x1="200" y1="260" x2="200" y2="280" stroke="#0056b3" stroke-width="2"/>
+                                        <line x1="200" y1="320" x2="200" y2="335" stroke="#0056b3" stroke-width="2"/>
+                                        
+                                        <!-- Rückpfeil bei Nicht-Verfügbarkeit -->
+                                        <path d="M150,160 L50,160 L50,80 L100,80" fill="none" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="70" y="150" fill="#2c3e50">Nein</text>
+                                        <text x="210" y="210" fill="#2c3e50">Ja</text>
+                                    </svg>
+                                </div>
+                                
+                                <button class="btn btn-primary mt-2" onclick="showSolution('uebung3')">Lösung anzeigen</button>
+                                <div class="solution mt-2" id="solution3" style="display: none;">
+                                    <p>Das Aktivitätsdiagramm sollte folgende Elemente enthalten:</p>
+                                    <ul>
+                                        <li>Startknoten</li>
+                                        <li>Aktivität "Produkte auswählen"</li>
+                                        <li>Verzweigung "Verfügbarkeit prüfen"
+                                            <br>- Wenn verfügbar: weiter zu "Lieferadresse"
+                                            <br>- Wenn nicht verfügbar: zurück zu "Produkte auswählen"
+                                        </li>
+                                        <li>Parallele Aktivitäten:
+                                            <br>- "Lieferadresse eingeben"
+                                            <br>- "Zahlungsmethode wählen"
+                                        </li>
+                                        <li>Aktivität "Zahlung verarbeiten"</li>
+                                        <li>Aktivität "Bestellung bestätigen"</li>
+                                        <li>Endknoten</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uebung4">
+                                Übung 4: ER-Diagramm
+                            </button>
+                        </h3>
+                        <div id="uebung4" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <p>Erstellen Sie ein ER-Diagramm für ein Schulverwaltungssystem:</p>
+                                
+                                <div class="svg-container">
+                                    <h5 class="text-center mb-3" style="color: #0056b3;">Beispiel:</h5>
+                                    <svg class="svg-diagram" viewBox="0 0 500 400">
+                                        <!-- Entity Schüler -->
+                                        <rect x="50" y="50" width="120" height="60" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="110" y="85" text-anchor="middle" fill="#2c3e50">Schüler</text>
+                                        
+                                        <!-- Entity Klasse -->
+                                        <rect x="330" y="50" width="120" height="60" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="390" y="85" text-anchor="middle" fill="#2c3e50">Klasse</text>
+                                        
+                                        <!-- Entity Lehrer -->
+                                        <rect x="50" y="250" width="120" height="60" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="110" y="285" text-anchor="middle" fill="#2c3e50">Lehrer</text>
+                                        
+                                        <!-- Entity Fach -->
+                                        <rect x="330" y="250" width="120" height="60" fill="white" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="390" y="285" text-anchor="middle" fill="#2c3e50">Fach</text>
+                                        
+                                        <!-- Beziehungen -->
+                                        <line x1="170" y1="80" x2="330" y2="80" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="250" y="70" text-anchor="middle" fill="#2c3e50">gehört zu</text>
+                                        <text x="190" y="100" text-anchor="middle" fill="#2c3e50">n</text>
+                                        <text x="310" y="100" text-anchor="middle" fill="#2c3e50">1</text>
+                                        
+                                        <line x1="170" y1="280" x2="330" y2="280" stroke="#0056b3" stroke-width="2"/>
+                                        <text x="250" y="270" text-anchor="middle" fill="#2c3e50">unterrichtet</text>
+                                        <text x="190" y="300" text-anchor="middle" fill="#2c3e50">n</text>
+                                        <text x="310" y="300" text-anchor="middle" fill="#2c3e50">m</text>
+                                    </svg>
+                                </div>
+                                
+                                <button class="btn btn-primary mt-2" onclick="showSolution('uebung4')">Lösung anzeigen</button>
+                                <div class="solution mt-2" id="solution4" style="display: none;">
+                                    <p>Das ER-Diagramm sollte folgende Entitäten und Beziehungen enthalten:</p>
+                                    <ul>
+                                        <li>Entität Schüler:
+                                            <br>- ID (Primärschlüssel)
+                                            <br>- Name
+                                            <br>- Geburtsdatum
+                                        </li>
+                                        <li>Entität Klasse:
+                                            <br>- Bezeichnung (Primärschlüssel)
+                                            <br>- Klassenlehrer
+                                        </li>
+                                        <li>Entität Lehrer:
+                                            <br>- ID (Primärschlüssel)
+                                            <br>- Name
+                                            <br>- Fachbereich
+                                        </li>
+                                        <li>Entität Fach:
+                                            <br>- Code (Primärschlüssel)
+                                            <br>- Bezeichnung
+                                        </li>
+                                        <li>Beziehungen:
+                                            <br>- Schüler "gehört zu" Klasse (n:1)
+                                            <br>- Lehrer "unterrichtet" Fach (n:m)
+                                            <br>- Schüler "erhält Note in" Fach (n:m mit Attribut Note)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Über diesen Kurs</h5>
+                    <p>Dieser Kurs ist Teil der IT-Grundlagenausbildung und vermittelt wichtige Konzepte der Programmierung.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="grundlagen.html" class="text-white text-decoration-none">Zurück zur Übersicht</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showSolution(id) {
+            document.getElementById('solution' + id.slice(-1)).style.display = 'block';
+        }
+    </script>
+</body>
+</html> 

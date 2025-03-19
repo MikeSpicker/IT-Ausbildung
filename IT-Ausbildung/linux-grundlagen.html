@@ -13,18 +13,19 @@
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
         .hero-section {
-            background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
             position: relative;
             overflow: hidden;
+            padding: 6rem 0;
         }
 
         .hero-section::before {
@@ -36,18 +37,101 @@
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
             background-size: cover;
-            opacity: 0.1;
+            opacity: 0.2;
         }
 
         .feature-icon {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #0d6efd;
+            margin-bottom: 1.5rem;
+            color: #2193b0;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+
+        .terminal-window {
+            background: #2d3436;
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-family: monospace;
+            position: relative;
+        }
+
+        .terminal-window::before {
+            content: "● ● ●";
+            position: absolute;
+            top: 0.5rem;
+            left: 1rem;
+            color: #636e72;
+        }
+
+        .command-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .command-list li {
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #2193b0;
+            transition: all 0.2s ease;
+        }
+
+        .command-list li:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
         }
 
         .alert {
             border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-container {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        code {
+            background: #2d3436;
+            color: #fff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .exercise-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .exercise-card .card-header {
+            background: linear-gradient(45deg, #2193b0, #6dd5ed);
+            color: white;
+            border: none;
+            padding: 1.5rem;
+        }
+
+        .exercise-card .card-body {
+            padding: 2rem;
         }
 
         .navbar {
@@ -97,7 +181,15 @@
                         <p class="lead">Lernen Sie die Grundlagen und Best Practices der Linux Grundlagen</p>
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
-                        <i class="fas fa-terminal fa-6x float-end"></i>
+                        <div class="terminal-window mt-4">
+                            <pre><code>$ whoami
+linux_learner
+$ pwd
+/home/linux_learner
+$ ls -l
+total 4
+drwxr-xr-x 2 user user 4096 Mar 19 10:00 projects/</code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,7 +242,7 @@
                             <i class="fas fa-terminal feature-icon"></i>
                             <h4>3. Wichtige Befehle</h4>
                             <p>Hier sind die wichtigsten Befehle für den Anfang:</p>
-                            <ul class="list-unstyled">
+                            <ul class="command-list">
                                 <li><code>ls</code> - Zeigt Dateien und Ordner an</li>
                                 <li><code>cd</code> - Wechselt das Verzeichnis</li>
                                 <li><code>pwd</code> - Zeigt das aktuelle Verzeichnis</li>
@@ -199,59 +291,102 @@
         <!-- Übungen Section Anfang -->
         <section class="container my-5">
             <div class="row">
-                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-                    <h2 class="mb-4">Praktische Übungen</h2>
-                    <p class="lead">Hier finden Sie praktische Übungen, um die Linux-Grundlagen zu vertiefen.</p>
+                <div class="col-lg-8 mx-auto text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-4 mb-4">Praktische Übungen</h2>
+                    <p class="lead">Vertiefen Sie Ihre Linux-Kenntnisse mit praktischen Übungen</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100">
+                    <div class="exercise-card">
+                        <div class="card-header">
+                            <h4 class="mb-0"><i class="fas fa-folder-open me-2"></i>Übung 1: Navigation</h4>
+                        </div>
                         <div class="card-body">
-                            <h4><i class="fas fa-folder-open me-2"></i>Übung 1: Navigation im Dateisystem</h4>
-                            <p>Lernen Sie, sich im Linux-Dateisystem zu bewegen:</p>
-                            <ol>
+                            <p class="lead mb-4">Lernen Sie, sich im Linux-Dateisystem zu bewegen:</p>
+                            <div class="terminal-window mb-4">
+                                <pre><code>$ pwd
+/home/user
+$ cd /home
+$ mkdir linux_uebungen
+$ cd linux_uebungen</code></pre>
+                            </div>
+                            <ol class="command-list">
                                 <li>Öffnen Sie das Terminal</li>
-                                <li>Geben Sie <code>pwd</code> ein, um zu sehen, wo Sie sich befinden</li>
-                                <li>Navigieren Sie mit <code>cd /home</code> in Ihr Home-Verzeichnis</li>
-                                <li>Erstellen Sie einen neuen Ordner mit <code>mkdir linux_uebungen</code></li>
-                                <li>Wechseln Sie in diesen Ordner mit <code>cd linux_uebungen</code></li>
+                                <li>Geben Sie <code>pwd</code> ein</li>
+                                <li>Navigieren Sie mit <code>cd /home</code></li>
+                                <li>Erstellen Sie einen Ordner</li>
+                                <li>Wechseln Sie in den Ordner</li>
                             </ol>
-                            <div class="alert alert-info">
-                                <i class="fas fa-lightbulb"></i> Tipp: Nutzen Sie die Tab-Taste zur Autovervollständigung von Befehlen
+                            <div class="alert alert-info mt-4">
+                                <i class="fas fa-lightbulb me-2"></i>
+                                <strong>Tipp:</strong> Nutzen Sie die Tab-Taste zur Autovervollständigung
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100">
+                    <div class="exercise-card">
+                        <div class="card-header">
+                            <h4 class="mb-0"><i class="fas fa-file-alt me-2"></i>Übung 2: Dateiverwaltung</h4>
+                        </div>
                         <div class="card-body">
-                            <h4><i class="fas fa-file-alt me-2"></i>Übung 2: Dateien erstellen und verwalten</h4>
-                            <p>Üben Sie den Umgang mit Dateien:</p>
-                            <ol>
-                                <li>Erstellen Sie eine neue Datei mit <code>touch test.txt</code></li>
-                                <li>Öffnen Sie die Datei mit einem Editor: <code>nano test.txt</code></li>
-                                <li>Schreiben Sie einen kurzen Text</li>
-                                <li>Speichern Sie mit Strg+O und beenden Sie mit Strg+X</li>
-                                <li>Zeigen Sie den Inhalt an mit <code>cat test.txt</code></li>
+                            <p class="lead mb-4">Üben Sie den Umgang mit Dateien:</p>
+                            <div class="terminal-window mb-4">
+                                <pre><code>$ touch test.txt
+$ nano test.txt
+$ cat test.txt
+Hallo Linux!</code></pre>
+                            </div>
+                            <ol class="command-list">
+                                <li>Erstellen Sie eine Datei</li>
+                                <li>Öffnen Sie den Editor</li>
+                                <li>Schreiben Sie Text</li>
+                                <li>Speichern (Strg+O)</li>
+                                <li>Beenden (Strg+X)</li>
                             </ol>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100">
+                    <div class="exercise-card">
+                        <div class="card-header">
+                            <h4 class="mb-0"><i class="fas fa-lock me-2"></i>Übung 3: Berechtigungen</h4>
+                        </div>
                         <div class="card-body">
-                            <h4><i class="fas fa-lock me-2"></i>Übung 3: Berechtigungen verstehen</h4>
-                            <p>Lernen Sie das Berechtigungssystem kennen:</p>
-                            <ol>
-                                <li>Zeigen Sie die Berechtigungen an: <code>ls -l</code></li>
-                                <li>Ändern Sie die Berechtigungen: <code>chmod 755 test.txt</code></li>
-                                <li>Überprüfen Sie die Änderungen: <code>ls -l test.txt</code></li>
-                            </ol>
-                            <div class="alert alert-warning">
-                                <i class="fas fa-exclamation-triangle"></i> Wichtig: Seien Sie vorsichtig mit Berechtigungsänderungen
+                            <p class="lead mb-4">Lernen Sie das Berechtigungssystem kennen:</p>
+                            <div class="terminal-window mb-4">
+                                <pre><code>$ ls -l
+-rw-r--r-- 1 user user 11 Mar 19 10:00 test.txt
+$ chmod 755 test.txt
+$ ls -l
+-rwxr-xr-x 1 user user 11 Mar 19 10:00 test.txt</code></pre>
+                            </div>
+                            <div class="progress-container">
+                                <h5>Berechtigungen verstehen</h5>
+                                <div class="d-flex justify-content-between">
+                                    <span>Lesen (r)</span>
+                                    <span>4</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 100%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between mt-2">
+                                    <span>Schreiben (w)</span>
+                                    <span>2</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 100%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between mt-2">
+                                    <span>Ausführen (x)</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 100%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>

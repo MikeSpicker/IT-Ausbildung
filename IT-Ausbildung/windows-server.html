@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Server Grundlagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0078d4 0%, #00a2ed 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0078d4;
+        }
+
+        .alert {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .code-block code {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fab fa-windows me-2"></i>IT-Lernplattform
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Startseite
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Windows Server Grundlagen</h1>
+                    <p class="lead mb-4">Windows Server ist ein Betriebssystem von Microsoft, das speziell für den Einsatz in Unternehmen entwickelt wurde. Es dient zur Verwaltung von Netzwerken, Benutzern, Serverdiensten und Anwendungen.</p>
+                    <div class="alert alert-info">
+                        <h4 class="h5">Warum Windows Server?</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><i class="fas fa-check me-2"></i>Zentrale Benutzer- und Ressourcenverwaltung</li>
+                            <li><i class="fas fa-check me-2"></i>Skalierbarkeit und Sicherheit</li>
+                            <li><i class="fas fa-check me-2"></i>Virtualisierungsmöglichkeiten mit Hyper-V</li>
+                            <li><i class="fas fa-check me-2"></i>Unterstützung für Cloud- und On-Premise-Infrastrukturen</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <i class="fab fa-windows fa-8x text-white opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hauptinhalt -->
+    <main class="container py-5">
+        <!-- Systemanforderungen -->
+        <section id="systemanforderungen" class="mb-5">
+            <h2 class="text-center mb-4">Systemanforderungen</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-microchip me-2 text-primary"></i>Prozessor
+                            </h3>
+                            <p class="card-text">64-Bit, mindestens 1,4 GHz (empfohlen: 2 GHz oder mehr)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-memory me-2 text-primary"></i>RAM
+                            </h3>
+                            <p class="card-text">Mindestens 2 GB (empfohlen: 8 GB oder mehr)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-hdd me-2 text-primary"></i>Festplatte
+                            </h3>
+                            <p class="card-text">Mindestens 32 GB freier Speicherplatz</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-network-wired me-2 text-primary"></i>Netzwerk
+                            </h3>
+                            <p class="card-text">Gigabit-Ethernet empfohlen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Server Rollen -->
+        <section id="rollen" class="mb-5">
+            <h2 class="text-center mb-4">Windows Server Rollen</h2>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Rolle</th>
+                            <th>Funktion</th>
+                            <th>PowerShell-Befehl</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-users me-2"></i>Active Directory (AD DS)</td>
+                            <td>Verwaltung von Benutzern und Gruppen</td>
+                            <td><code>Install-WindowsFeature -Name AD-Domain-Services</code></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-server me-2"></i>DNS-Server</td>
+                            <td>Namensauflösung von Netzwerkgeräten</td>
+                            <td><code>Install-WindowsFeature -Name DNS</code></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-network-wired me-2"></i>DHCP-Server</td>
+                            <td>Automatische IP-Adressvergabe</td>
+                            <td><code>Install-WindowsFeature -Name DHCP</code></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-hdd me-2"></i>Datei- und Druckserver</td>
+                            <td>Zentrale Datei- und Druckverwaltung</td>
+                            <td><code>Install-WindowsFeature -Name File-Services</code></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-desktop me-2"></i>Hyper-V</td>
+                            <td>Virtualisierung von Gäste-Betriebssystemen</td>
+                            <td><code>Install-WindowsFeature -Name Hyper-V</code></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-globe me-2"></i>Webserver (IIS)</td>
+                            <td>Hosten von Websites und Webanwendungen</td>
+                            <td><code>Install-WindowsFeature -Name Web-Server</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Grundlagen -->
+        <section id="grundlagen" class="mb-5">
+            <h2 class="text-center mb-4">Grundlagen des Windows Servers</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-server me-2 text-primary"></i>Was ist Windows Server?
+                            </h3>
+                            <p class="card-text">Windows Server ist die Server-Edition von Windows und bietet folgende Funktionen:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Active Directory (AD) – Verwaltung von Benutzern, Gruppen und Rechten</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Datei- und Druckserver – Gemeinsame Nutzung von Dateien und Druckern</li>
+                                <li><i class="fas fa-check text-success me-2"></i>DNS- & DHCP-Server – Namensauflösung und IP-Adressenvergabe</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Hyper-V (Virtualisierung) – Virtuelle Maschinen erstellen</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Rollen & Features – Anpassbare Server-Funktionalität</li>
+                            </ul>
+                            <div class="mt-3">
+                                <h4 class="h6">Aktuelle Versionen:</h4>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-server me-2"></i>Windows Server 2016</li>
+                                    <li><i class="fas fa-server me-2"></i>Windows Server 2019</li>
+                                    <li><i class="fas fa-server me-2"></i>Windows Server 2022 (aktuellste Version)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-shield-alt me-2 text-primary"></i>Wichtige Funktionen
+                            </h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <strong>Active Directory:</strong>
+                                    <p class="mb-0">Zentrale Verwaltung von Benutzern, Gruppen und Ressourcen</p>
+                                </li>
+                                <li class="mb-3">
+                                    <strong>DNS-Server:</strong>
+                                    <p class="mb-0">Namensauflösung im Netzwerk</p>
+                                </li>
+                                <li class="mb-3">
+                                    <strong>DHCP-Server:</strong>
+                                    <p class="mb-0">Automatische IP-Adressvergabe</p>
+                                </li>
+                                <li>
+                                    <strong>Datei- und Druckserver:</strong>
+                                    <p class="mb-0">Zentrale Speicherung und Druckverwaltung</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detaillierte Informationen -->
+        <section id="details" class="mb-5">
+            <h2 class="text-center mb-4">Detaillierte Informationen</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-cogs me-2 text-primary"></i>Installation und Ersteinrichtung
+                            </h3>
+                            <div class="mb-3">
+                                <h4 class="h6">Schritt 1: Windows Server Installation</h4>
+                                <ol class="mb-0">
+                                    <li>ISO-Datei herunterladen (Microsoft-Website)</li>
+                                    <li>Bootfähigen USB-Stick erstellen</li>
+                                    <li>Server von USB starten & Windows Server installieren</li>
+                                    <li>Benutzerkonto erstellen & Netzwerkeinstellungen konfigurieren</li>
+                                </ol>
+                            </div>
+                            <div>
+                                <h4 class="h6">Schritt 2: Grundkonfiguration</h4>
+                                <ul class="list-unstyled mb-0">
+                                    <li><i class="fas fa-cog me-2"></i>Server-Manager öffnen → Zentrale Verwaltungszentrale</li>
+                                    <li><i class="fas fa-tag me-2"></i>Hostname ändern → Eindeutigen Servernamen setzen</li>
+                                    <li><i class="fas fa-network-wired me-2"></i>Netzwerkkonfiguration → Statische IP-Adresse setzen</li>
+                                    <li><i class="fas fa-sync me-2"></i>Windows Updates installieren → Sicherheits- und Funktionsupdates anwenden</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-users me-2 text-primary"></i>Active Directory (AD) Grundlagen
+                            </h3>
+                            <p class="card-text">Active Directory (AD) ist ein Verzeichnisdienst zur Verwaltung von Benutzern, Gruppen und Computern im Netzwerk.</p>
+                            <div class="mb-3">
+                                <h4 class="h6">Wichtige AD-Konzepte:</h4>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-globe me-2"></i>Domäne – Netzwerk mit zentraler Benutzerverwaltung</li>
+                                    <li><i class="fas fa-folder me-2"></i>Organizational Units (OU) – Struktur für Benutzer & Gruppen</li>
+                                    <li><i class="fas fa-cogs me-2"></i>Gruppenrichtlinien (GPOs) – Regeln für Benutzer & Computer</li>
+                                    <li><i class="fas fa-user me-2"></i>Benutzerverwaltung – Erstellen, Ändern & Löschen von Konten</li>
+                                </ul>
+                            </div>
+                            <div class="code-block">
+                                <h4 class="h6">Beispiel: Benutzer erstellen (PowerShell)</h4>
+                                <code>New-ADUser -Name "Max Mustermann" -GivenName "Max" -Surname "Mustermann" -SamAccountName "m.mustermann" -UserPrincipalName "m.mustermann@firma.local" -Path "OU=Mitarbeiter,DC=firma,DC=local" -AccountPassword (ConvertTo-SecureString "Passwort123" -AsPlainText -Force) -Enabled $true</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Übungen -->
+        <section id="uebungen" class="mb-5">
+            <h2 class="text-center mb-4">Praktische Übungen</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-user-plus me-2 text-primary"></i>Übung 1: Active Directory
+                            </h3>
+                            <p class="card-text">Erstellen Sie eine neue Benutzergruppe und fügen Sie Benutzer hinzu.</p>
+                            <div class="code-block">
+                                <code>New-ADGroup -Name "IT-Abteilung" -GroupScope Global</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-shield-alt me-2 text-primary"></i>Übung 2: Sicherheit
+                            </h3>
+                            <p class="card-text">Konfigurieren Sie die Windows Firewall für einen Webserver.</p>
+                            <div class="code-block">
+                                <code>New-NetFirewallRule -DisplayName "Web Server" -Direction Inbound -Protocol TCP -LocalPort 80,443 -Action Allow</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title h5">
+                                <i class="fas fa-hdd me-2 text-primary"></i>Übung 3: Speicherverwaltung
+                            </h3>
+                            <p class="card-text">Erstellen Sie einen neuen Datenträger und formatieren Sie ihn.</p>
+                            <div class="code-block">
+                                <code>Initialize-Disk -Number 1 -PartitionStyle GPT</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Windows Server Grundlagen</h5>
+                    <p>Eine Einführung in die Windows Server-Administration</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="index.html" class="text-white">
+                        <i class="fas fa-home me-2"></i>Zurück zur Startseite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html> 

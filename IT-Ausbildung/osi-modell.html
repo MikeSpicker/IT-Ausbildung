@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSI-Modell - Netzwerkgrundlagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="grundlagen.html">IT-Ausbildung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="grundlagen.html">Zurück zu Grundlagen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="mb-4">Das OSI-Modell</h1>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Was ist das OSI-Modell?</h2>
+                <p>Das OSI-Modell (Open Systems Interconnection Model) ist ein Referenzmodell für Netzwerkprotokolle. Es besteht aus sieben Schichten, die die Kommunikation zwischen verschiedenen Systemen standardisieren.</p>
+                
+                <div class="table-responsive mt-4">
+                    <table class="table table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Schicht</th>
+                                <th>Name</th>
+                                <th>Funktion</th>
+                                <th>Beispiele</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7</td>
+                                <td>Anwendungsschicht</td>
+                                <td>Schnittstelle zu Anwendungen</td>
+                                <td>HTTP, FTP, SMTP</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Darstellungsschicht</td>
+                                <td>Datendarstellung und -verschlüsselung</td>
+                                <td>SSL/TLS, JPEG, ASCII</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Sitzungsschicht</td>
+                                <td>Sitzungsverwaltung</td>
+                                <td>NetBIOS, RPC</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Transportschicht</td>
+                                <td>Ende-zu-Ende-Verbindung</td>
+                                <td>TCP, UDP</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Vermittlungsschicht</td>
+                                <td>Routing und Adressierung</td>
+                                <td>IP, ICMP</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Sicherungsschicht</td>
+                                <td>Fehlererkennung und -korrektur</td>
+                                <td>Ethernet, WLAN</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Bitübertragungsschicht</td>
+                                <td>Physische Übertragung</td>
+                                <td>Kabel, Funk</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Datenfluss im OSI-Modell</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Sender</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">1. Daten werden in der Anwendungsschicht erstellt</li>
+                            <li class="list-group-item">2. Jede Schicht fügt ihre eigenen Header hinzu</li>
+                            <li class="list-group-item">3. Daten werden nach unten weitergereicht</li>
+                            <li class="list-group-item">4. Physische Übertragung in Schicht 1</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Empfänger</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">1. Empfang der Daten in Schicht 1</li>
+                            <li class="list-group-item">2. Daten werden nach oben weitergereicht</li>
+                            <li class="list-group-item">3. Jede Schicht entfernt ihren Header</li>
+                            <li class="list-group-item">4. Anwendung erhält ursprüngliche Daten</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2>Übungsaufgaben</h2>
+                <div class="accordion" id="uebungsAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#uebung1">
+                                Übung 1: Schichten zuordnen
+                            </button>
+                        </h3>
+                        <div id="uebung1" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <p>Ordnen Sie die folgenden Protokolle den richtigen OSI-Schichten zu:</p>
+                                <ul>
+                                    <li>HTTP</li>
+                                    <li>TCP</li>
+                                    <li>IP</li>
+                                    <li>Ethernet</li>
+                                </ul>
+                                <button class="btn btn-primary mt-2" onclick="showSolution('uebung1')">Lösung anzeigen</button>
+                                <div class="solution mt-2" id="solution1" style="display: none;">
+                                    <ul>
+                                        <li>HTTP - Schicht 7 (Anwendungsschicht)</li>
+                                        <li>TCP - Schicht 4 (Transportschicht)</li>
+                                        <li>IP - Schicht 3 (Vermittlungsschicht)</li>
+                                        <li>Ethernet - Schicht 2 (Sicherungsschicht)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Über diesen Kurs</h5>
+                    <p>Dieser Kurs ist Teil der IT-Grundlagenausbildung und vermittelt wichtige Konzepte der Netzwerktechnik.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="grundlagen.html" class="text-white text-decoration-none">Zurück zur Übersicht</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showSolution(id) {
+            document.getElementById('solution' + id.slice(-1)).style.display = 'block';
+        }
+    </script>
+</body>
+</html> 

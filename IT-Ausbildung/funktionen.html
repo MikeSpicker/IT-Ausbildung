@@ -3,254 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funktionen - IT-Lernplattform</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <title>Funktionen - Programmierung Grundlagen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
     <style>
-        .code-playground {
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;    
+        body {
+            background-color: #f8f9fa;
         }
-        .code-output {
-            background-color: #2d2d2d;
-            color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            min-height: 100px;
-            margin-top: 10px;
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            margin-bottom: 2rem;
         }
-        .function-card {
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        .function-card:hover {
+        .card:hover {
             transform: translateY(-5px);
         }
-        .function-visualization {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
+        .card-body {
+            padding: 2rem;
         }
-        .parameter-box {
-            border: 2px solid #dee2e6;
-            padding: 10px;
-            margin: 5px;
-            display: inline-block;
-            min-width: 100px;
+        h1 {
+            color: #0d6efd;
+            font-weight: 700;
             text-align: center;
-            background-color: white;
+            margin-bottom: 2rem;
         }
-        .return-value {
-            border: 2px solid #28a745;
-            background-color: #d4edda;
+        h2 {
+            color: #0d6efd;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 0.5rem;
         }
-        .scope-visualization {
-            border-left: 3px solid #007bff;
-            padding-left: 15px;
-            margin: 10px 0;
-        }
-        .interactive-demo {
-            border: 1px solid #dee2e6;
+        .example-code {
+            background: #f8f9fa;
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #e7f1ff;
+            color: #0d6efd;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            font-weight: 700;
+        }
+        footer {
+            margin-top: 4rem;
+        }
+        .btn-primary {
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+        }
+        .solution {
+            border-left: 4px solid #0d6efd;
+            padding-left: 1rem;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">IT-Lernplattform</a>
+            <a class="navbar-brand" href="grundlagen.html"><i class="fas fa-laptop-code me-2"></i>IT-Ausbildung</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Startseite</a>
-                    </li>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="grundlagen.html">Zurück zu Grundlagen</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="bg-primary text-white py-5">
-            <div class="container">
-                <h1 class="display-4">Funktionen</h1>
-                <p class="lead">Wiederverwendbare Codeblöcke verstehen und erstellen</p>
-            </div>
-        </section>
+    <main class="container my-5">
+        <h1 class="mb-4"><i class="fas fa-function me-2"></i>Funktionen in der Programmierung</h1>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2><i class="fas fa-info-circle me-2"></i>Was sind Funktionen?</h2>
+                        <p>Funktionen sind wiederverwendbare Codeblöcke, die eine bestimmte Aufgabe ausführen. Sie helfen uns dabei, Code zu organisieren und Wiederholungen zu vermeiden.</p>
+                        
+                        <div class="example-code">
+                            <pre><code class="language-python">
+def begruessung(name):
+    return f"Hallo {name}!"
 
-        <!-- Main Content -->
-        <section class="py-5">
-            <div class="container">
-                <div class="row">
-                    <!-- Left Column: Theory and Interactive Examples -->
-                    <div class="col-lg-8">
-                        <!-- Function Basics -->
-                        <article class="mb-5">
-                            <h2>Was sind Funktionen?</h2>
-                            <p class="lead">Funktionen sind wiederverwendbare Codeblöcke, die eine bestimmte Aufgabe ausführen.</p>
-                            
-                            <div class="interactive-demo">
-                                <h5>Einfache Funktion</h5>
-                                <div class="code-playground">
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control" id="greetingName" placeholder="Name eingeben">
-                                    </div>
-                                    <button class="btn btn-primary" id="callGreeting">Funktion aufrufen</button>
-                                    <div class="code-output" id="greetingOutput"></div>
-                                </div>
-                                <div class="function-visualization" id="greetingVisualization">
-                                    <!-- Function steps will be visualized here -->
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- Function Types -->
-                        <article class="mb-5">
-                            <h2>Arten von Funktionen</h2>
-                            <div class="row g-4">
-                                <!-- Regular Function -->
-                                <div class="col-md-6">
-                                    <div class="card function-card h-100">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <i class="fas fa-code text-primary me-2"></i>
-                                                Normale Funktion
-                                            </h5>
-                                            <pre><code class="language-javascript">function addiere(a, b) {
-    return a + b;
-}</code></pre>
-                                            <div class="interactive-demo">
-                                                <div class="input-group mb-3">
-                                                    <input type="number" class="form-control" id="num1" placeholder="Zahl 1">
-                                                    <input type="number" class="form-control" id="num2" placeholder="Zahl 2">
-                                                </div>
-                                                <button class="btn btn-primary" id="calculateSum">Addieren</button>
-                                                <div class="code-output" id="sumOutput"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Arrow Function -->
-                                <div class="col-md-6">
-                                    <div class="card function-card h-100">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <i class="fas fa-arrow-right text-success me-2"></i>
-                                                Pfeilfunktion
-                                            </h5>
-                                            <pre><code class="language-javascript">const multipliziere = (a, b) => a * b;</code></pre>
-                                            <div class="interactive-demo">
-                                                <div class="input-group mb-3">
-                                                    <input type="number" class="form-control" id="factor1" placeholder="Faktor 1">
-                                                    <input type="number" class="form-control" id="factor2" placeholder="Faktor 2">
-                                                </div>
-                                                <button class="btn btn-primary" id="calculateProduct">Multiplizieren</button>
-                                                <div class="code-output" id="productOutput"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- Parameters and Return Values -->
-                        <article class="mb-5">
-                            <h2>Parameter und Rückgabewerte</h2>
-                            <div class="interactive-demo">
-                                <h5>String-Manipulation</h5>
-                                <div class="code-playground">
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control" id="textInput" placeholder="Text eingeben">
-                                    </div>
-                                    <select class="form-select mb-3" id="transformationType">
-                                        <option value="uppercase">Großbuchstaben</option>
-                                        <option value="lowercase">Kleinbuchstaben</option>
-                                        <option value="reverse">Umkehren</option>
-                                    </select>
-                                    <button class="btn btn-primary" id="transformText">Text transformieren</button>
-                                    <div class="code-output" id="transformOutput"></div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- Scope and Closure -->
-                        <article class="mb-5">
-                            <h2>Geltungsbereich (Scope)</h2>
-                            <div class="interactive-demo">
-                                <h5>Scope-Demonstration</h5>
-                                <div class="code-playground">
-                                    <div class="scope-visualization" id="scopeDemo">
-                                        <!-- Scope levels will be visualized here -->
-                                    </div>
-                                    <button class="btn btn-primary" id="demonstrateScope">Scope testen</button>
-                                    <div class="code-output" id="scopeOutput"></div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Right Column: Practice -->
-                    <div class="col-lg-4">
-                        <!-- Quick Reference -->
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Quick Reference</h5>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2">
-                                        <code>function name(param) { }</code>
-                                        <small class="text-muted d-block">Funktionsdeklaration</small>
-                                    </li>
-                                    <li class="mb-2">
-                                        <code>const name = () => { }</code>
-                                        <small class="text-muted d-block">Pfeilfunktion</small>
-                                    </li>
-                                    <li class="mb-2">
-                                        <code>return wert;</code>
-                                        <small class="text-muted d-block">Rückgabewert</small>
-                                    </li>
-                                </ul>
-                            </div>
+# Funktion aufrufen
+ergebnis = begruessung("Max")
+print(ergebnis)  # Ausgabe: Hallo Max!
+                            </code></pre>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Practice Exercises -->
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Übungsaufgaben</h5>
-                                <div id="exercises">
-                                    <!-- Exercise 1 -->
-                                    <div class="exercise mb-4">
-                                        <p>Was ist der Rückgabewert?</p>
-                                        <pre><code class="language-javascript">function test(x) {
-    return x * 2;
-}
-test(5);</code></pre>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="q1" value="10">
-                                            <label class="form-check-label">10</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="q1" value="5">
-                                            <label class="form-check-label">5</label>
-                                        </div>
-                                        <button class="btn btn-sm btn-primary mt-2" onclick="checkAnswer(1)">Prüfen</button>
-                                    </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2><i class="fas fa-code me-2"></i>Funktionsparameter</h2>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item"><i class="fas fa-check-circle me-2 text-success"></i>Pflichtparameter</li>
+                            <li class="list-group-item"><i class="fas fa-check-circle me-2 text-success"></i>Optionale Parameter</li>
+                            <li class="list-group-item"><i class="fas fa-check-circle me-2 text-success"></i>Keyword Arguments</li>
+                        </ul>
+                        <div class="example-code">
+                            <pre><code class="language-python">
+def berechne_summe(a, b=0, *args):
+    summe = a + b
+    for zahl in args:
+        summe += zahl
+    return summe
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
 
-                                    <!-- Exercise 2 -->
-                                    <div class="exercise mb-4">
-                                        <p>Implementieren Sie eine Funktion:</p>
-                                        <textarea class="form-control code-editor mb-3" rows="5" id="functionImplementation" placeholder="// Schreibe eine Funktion, die prüft ob eine Zahl gerade ist"></textarea>
-                                        <button class="btn btn-primary" id="checkImplementation">Code prüfen</button>
-                                        <div id="implementationResult" class="mt-2"></div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2><i class="fas fa-tasks me-2"></i>Übungsaufgaben</h2>
+                        <div class="accordion" id="uebungsAccordion">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#uebung1">
+                                        Übung 1: Einfache Funktion erstellen
+                                    </button>
+                                </h3>
+                                <div id="uebung1" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <p>Erstellen Sie eine Funktion, die zwei Zahlen multipliziert und das Ergebnis zurückgibt.</p>
+                                        <button class="btn btn-primary mt-2" onclick="showSolution('uebung1')">Lösung anzeigen</button>
+                                        <div class="solution mt-2" id="solution1" style="display: none;">
+                                            <pre><code class="language-python">
+def multipliziere(a, b):
+    return a * b
+
+# Test
+ergebnis = multipliziere(4, 5)
+print(ergebnis)  # Ausgabe: 20
+                                            </code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -258,28 +155,30 @@ test(5);</code></pre>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>Weitere Ressourcen</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Functions" class="text-white" target="_blank">MDN Web Docs - Funktionen</a></li>
-                        <li><a href="https://javascript.info/function-basics" class="text-white" target="_blank">JavaScript.info - Function Basics</a></li>
-                    </ul>
+                    <h5>Über diesen Kurs</h5>
+                    <p>Dieser Kurs ist Teil der IT-Grundlagenausbildung und vermittelt wichtige Konzepte der Programmierung.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <p class="mb-0">© 2025 IT-Lernplattform</p>
+                    <a href="grundlagen.html" class="text-white text-decoration-none">Zurück zur Übersicht</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="js/funktionen.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script>
+        function showSolution(id) {
+            document.getElementById('solution' + id.slice(-1)).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
