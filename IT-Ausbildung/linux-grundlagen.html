@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versionskontrolle in der IT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0d6efd;
+        }
+
+        .alert {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .code-block code {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-linux me-2"></i>IT-Lernplattform
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Startseite
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section text-white py-5 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <h1 class="display-4 fw-bold">Linux Server Grundlagen</h1>
+                        <p class="lead">Lernen Sie die Grundlagen und Best Practices der Linux Grundlagen</p>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <i class="fas fa-terminal fa-6x float-end"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grundlagen Section Anfang-->
+        <section class="container my-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="mb-4">Was ist Linux?</h2>
+                    <p class="lead">Linux ist ein kostenloses, offenes Betriebssystem, das auf dem Unix-System basiert. Es ist besonders beliebt bei Entwicklern und für Server-Systeme.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-folder feature-icon"></i>
+                            <h4>1. Dateisystem</h4>
+                            <p>Linux verwendet eine baumartige Struktur für Dateien und Ordner:</p>
+                            <ul class="list-unstyled">
+                                <li><code>/</code> - Das Wurzelverzeichnis</li>
+                                <li><code>/home</code> - Benutzerverzeichnisse</li>
+                                <li><code>/etc</code> - Systemkonfigurationsdateien</li>
+                                <li><code>/bin</code> - Wichtige Systemprogramme</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-lock feature-icon"></i>
+                            <h4>2. Benutzerrechte</h4>
+                            <p>Linux hat ein ausgeklügeltes Berechtigungssystem:</p>
+                            <ul class="list-unstyled">
+                                <li>Lesen (r)</li>
+                                <li>Schreiben (w)</li>
+                                <li>Ausführen (x)</li>
+                            </ul>
+                            <p>Diese Rechte können für den Besitzer, die Gruppe und andere Benutzer gesetzt werden.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-terminal feature-icon"></i>
+                            <h4>3. Wichtige Befehle</h4>
+                            <p>Hier sind die wichtigsten Befehle für den Anfang:</p>
+                            <ul class="list-unstyled">
+                                <li><code>ls</code> - Zeigt Dateien und Ordner an</li>
+                                <li><code>cd</code> - Wechselt das Verzeichnis</li>
+                                <li><code>pwd</code> - Zeigt das aktuelle Verzeichnis</li>
+                                <li><code>mkdir</code> - Erstellt einen neuen Ordner</li>
+                                <li><code>rm</code> - Löscht Dateien</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-desktop feature-icon"></i>
+                            <h4>4. Terminal</h4>
+                            <p>Das Terminal ist die Kommandozeile von Linux. Hier können Sie:</p>
+                            <ul class="list-unstyled">
+                                <li>Befehle direkt eingeben</li>
+                                <li>Mit dem System interagieren</li>
+                                <li>Programme ausführen</li>
+                                <li>Dateien verwalten</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-box feature-icon"></i>
+                            <h4>5. Paketverwaltung</h4>
+                            <p>Linux verwendet Paketmanager zum Installieren von Software:</p>
+                            <ul class="list-unstyled">
+                                <li><code>apt</code> (Ubuntu/Debian)</li>
+                                <li><code>yum</code> (Red Hat/Fedora)</li>
+                                <li><code>pacman</code> (Arch Linux)</li>
+                            </ul>
+                            <p>Beispiel: <code>sudo apt install programmname</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Grundlagen Section Ende-->
+
+        <!-- Übungen Section Anfang -->
+        <section class="container my-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="mb-4">Praktische Übungen</h2>
+                    <p class="lead">Hier finden Sie praktische Übungen, um die Linux-Grundlagen zu vertiefen.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4><i class="fas fa-folder-open me-2"></i>Übung 1: Navigation im Dateisystem</h4>
+                            <p>Lernen Sie, sich im Linux-Dateisystem zu bewegen:</p>
+                            <ol>
+                                <li>Öffnen Sie das Terminal</li>
+                                <li>Geben Sie <code>pwd</code> ein, um zu sehen, wo Sie sich befinden</li>
+                                <li>Navigieren Sie mit <code>cd /home</code> in Ihr Home-Verzeichnis</li>
+                                <li>Erstellen Sie einen neuen Ordner mit <code>mkdir linux_uebungen</code></li>
+                                <li>Wechseln Sie in diesen Ordner mit <code>cd linux_uebungen</code></li>
+                            </ol>
+                            <div class="alert alert-info">
+                                <i class="fas fa-lightbulb"></i> Tipp: Nutzen Sie die Tab-Taste zur Autovervollständigung von Befehlen
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4><i class="fas fa-file-alt me-2"></i>Übung 2: Dateien erstellen und verwalten</h4>
+                            <p>Üben Sie den Umgang mit Dateien:</p>
+                            <ol>
+                                <li>Erstellen Sie eine neue Datei mit <code>touch test.txt</code></li>
+                                <li>Öffnen Sie die Datei mit einem Editor: <code>nano test.txt</code></li>
+                                <li>Schreiben Sie einen kurzen Text</li>
+                                <li>Speichern Sie mit Strg+O und beenden Sie mit Strg+X</li>
+                                <li>Zeigen Sie den Inhalt an mit <code>cat test.txt</code></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4><i class="fas fa-lock me-2"></i>Übung 3: Berechtigungen verstehen</h4>
+                            <p>Lernen Sie das Berechtigungssystem kennen:</p>
+                            <ol>
+                                <li>Zeigen Sie die Berechtigungen an: <code>ls -l</code></li>
+                                <li>Ändern Sie die Berechtigungen: <code>chmod 755 test.txt</code></li>
+                                <li>Überprüfen Sie die Änderungen: <code>ls -l test.txt</code></li>
+                            </ol>
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle"></i> Wichtig: Seien Sie vorsichtig mit Berechtigungsänderungen
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4><i class="fas fa-box-open me-2"></i>Übung 4: Paketverwaltung</h4>
+                            <p>Installieren Sie ein Programm:</p>
+                            <ol>
+                                <li>Aktualisieren Sie die Paketliste: <code>sudo apt update</code></li>
+                                <li>Installieren Sie ein Programm (z.B. htop): <code>sudo apt install htop</code></li>
+                                <li>Starten Sie das Programm: <code>htop</code></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4><i class="fas fa-info-circle me-2"></i>Übung 5: Systeminformationen anzeigen</h4>
+                            <p>Lernen Sie wichtige Systembefehle:</p>
+                            <ol>
+                                <li>Systeminformationen anzeigen: <code>uname -a</code></li>
+                                <li>Speichernutzung prüfen: <code>free -h</code></li>
+                                <li>Festplattennutzung anzeigen: <code>df -h</code></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <div class="alert alert-success">
+                        <h5><i class="fas fa-check-circle"></i> Lernziele</h5>
+                        <p>Nach Abschluss dieser Übungen sollten Sie:</p>
+                        <ul>
+                            <li>Sich im Dateisystem zurechtfinden können</li>
+                            <li>Dateien erstellen und verwalten können</li>
+                            <li>Berechtigungen verstehen und anpassen können</li>
+                            <li>Programme installieren können</li>
+                            <li>Wichtige Systeminformationen abrufen können</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Übungen Section Ende -->
+
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 IT-Lernplattform. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    <script src="js/versionskontrolle.js"></script>
+</body>
+</html>
